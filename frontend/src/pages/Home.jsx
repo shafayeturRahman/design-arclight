@@ -1,10 +1,13 @@
 import React from 'react';
+import Hero from '../components/home/Hero';
+import ImageSliding from '../components/home/ImageSliding';
 
 const Home = () => {
   return (
-    <div className="bg-theme min-h-screen">
-      <div className="" />
-    </div>
+    <>
+      <Hero />
+      <ImageSliding />
+    </>
   );
 };
 

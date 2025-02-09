@@ -26,7 +26,7 @@ const navData = [
 
 const Navbar = () => {
   return (
-    <div className="bg-theme py-2">
+    <div className="bg-theme py-2 text-white">
       <div className="container">
         <div className="flex justify-between items-center gap-4">
           {/* logo */}

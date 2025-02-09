@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Manrope:wght@200..800&display=swap');
 
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -10,6 +9,7 @@
   --theme-medium: #567c8d;
   --theme-light: #c7d9e5;
   --theme-gray: #cccccc;
+  --theme-bg: #fcf8f4;
 }
 
 /* re usable tailwind styles */
@@ -61,9 +61,9 @@ body {
   padding: 0;
   box-sizing: border-box;
   overflow-x: hidden;
-  background-color: #000;
-  color: #fff;
-  font-family: 'Jost', sans-serif;
+  background-color: var(--theme-bg);
+  color: var(--theme);
+  font-family: 'Manrope', sans-serif;
 }
 
 /* shadow */
