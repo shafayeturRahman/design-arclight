@@ -11,7 +11,7 @@ const AboutMe = () => {
         <img
           src="/public/images/home/about-abs2.png"
           alt="abstract"
-          className="absolute -bottom-12 md:bottom-[20%] left-[10%] md:-right-10 scale-75 md:scale-100"
+          className="absolute -bottom-12 md:bottom-[20%] right-[80%] md:-right-10 scale-75 md:scale-100"
         />
       </div>
 
@@ -44,7 +44,7 @@ const AboutMe = () => {
         </p>
         <Link
           to={`/contact`}
-          className="bg-themeLight hover:bg-themeMedium text-theme hover:text-white px-10 py-4 rounded-full leading-none hover:scale-90 duration-300"
+          className="bg-themeMedium hover:bg-themeDark text-white hover:scale-90 duration-300 px-10 py-4 rounded-full leading-none"
         >
           Let's Collaborate
         </Link>

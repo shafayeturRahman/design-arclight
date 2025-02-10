@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Hero = () => {
   return (
@@ -20,12 +21,18 @@ const Hero = () => {
           </p>
 
           <div className="flex gap-4 items-center mt-6">
-            <button className="bg-themeMedium px-10 py-4 rounded-full leading-none">
+            <Link
+              to={`/contact`}
+              className="bg-themeMedium hover:bg-themeDark hover:scale-90 duration-300 px-10 py-4 rounded-full leading-none"
+            >
               Let's Collaborate
-            </button>
-            <button className="bg-white text-themeMedium px-10 py-4 rounded-full leading-none">
+            </Link>
+            <Link
+              to={`/contact`}
+              className="bg-white hover:bg-themeMedium text-themeMedium hover:text-white px-10 py-4 rounded-full leading-none hover:scale-90 duration-300"
+            >
               Book a free call
-            </button>
+            </Link>
           </div>
         </div>
       </div>

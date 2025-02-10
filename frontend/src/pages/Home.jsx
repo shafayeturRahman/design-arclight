@@ -7,6 +7,7 @@ import Bloom from '../components/home/Bloom';
 import Wave from '../components/home/Wave';
 import Projects from '../components/home/Projects';
 import AboutMe from '../components/home/AboutMe';
+import Pricing from '../components/home/Pricing';
 
 const Home = () => {
   return (
@@ -18,6 +19,7 @@ const Home = () => {
       <Bloom />
       <Wave />
       <Projects />
+      <Pricing />
       <AboutMe />
     </>
   );

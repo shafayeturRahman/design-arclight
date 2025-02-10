@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Bloom = () => {
   return (
@@ -13,16 +14,19 @@ const Bloom = () => {
         <h2 className="text-3xl md:text-4xl lg:text-5xl font-theme !leading-snug font-medium capitalize mb-4">
           Specializing in branding & websites for creative minds
         </h2>
-        <p className="text-lg opacity-60 mb-4">
+        <p className="text-lg opacity-60 mb-12">
           Best known for our signature minimalistic style, DesignArclight is an
           independent design studio specializing in branding and website design.
           We take pride in being client-focused, collaborating with brands
           worldwide to create intentional and timeless designs. Blending
           creativity and strategy, we bring your vision to life.
         </p>
-        <button className="bg-themeMedium text-white px-10 py-4 rounded-full leading-none mt-6">
+        <Link
+          to={`/contact`}
+          className="bg-themeMedium hover:bg-themeDark text-white hover:scale-90 duration-300 px-10 py-4 rounded-full leading-none"
+        >
           Let's Collaborate
-        </button>
+        </Link>
         <img
           src="/public/images/home/bloom-abs.png"
           alt="signature"

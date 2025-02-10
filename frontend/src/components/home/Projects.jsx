@@ -47,53 +47,53 @@ const projectsList = [
 
 const Projects = () => {
   return (
-    <section className="py-20 md:py-32">
+    <section className="bg-white py-20 md:py-32">
       <div className="container">
-        <div className="flex flex-col justify-center items-center gap-4 -mt-12">
-          <h5 className="border border-themeGray rounded-full py-3 px-4 text-center leading-none">
+        <div className="-mt-12 flex flex-col items-center justify-center gap-4">
+          <h5 className="rounded-full border border-themeGray px-4 py-3 text-center leading-none">
             A Glimpse of My Work
           </h5>
-          <h1 className="text-4xl md:text-5xl !leading-[1.175] text-center capitalize font-theme font-medium max-w-[600px] mb-20">
+          <h1 className="mb-20 max-w-[600px] text-center font-theme text-4xl font-medium capitalize !leading-[1.175] md:text-5xl">
             Where Every Frame Speaks Every Detail Inspires
           </h1>
 
           {/* projects */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 w-full">
+          <div className="grid w-full grid-cols-1 gap-4 md:grid-cols-2 md:gap-8 lg:grid-cols-3">
             {projectsList.map((project, i) => {
               const { image, category, title, desc, link } = project;
               return (
                 <Link
                   to={link}
                   key={i}
-                  className="group relative min-h-[450px] lg:min-h-[500px] xl:min-h-[600px] rounded-lg overflow-hidden flex flex-col justify-between items-center"
+                  className="group relative flex min-h-[450px] flex-col items-center justify-between overflow-hidden rounded-lg lg:min-h-[500px] xl:min-h-[600px]"
                 >
                   {/* image */}
-                  <div className="absolute inset-0 z-[-1]">
+                  <div className="absolute inset-0">
                     <img
                       src={image}
                       alt={title}
-                      className="w-full h-full object-cover"
+                      className="h-full w-full object-cover"
                     />
                   </div>
                   {/* category */}
-                  <div className="flex justify-end w-full p-4">
-                    <p className="border border-themeGray rounded-full py-2.5 px-5 text-center leading-none text-white text-sm">
+                  <div className="z-10 flex w-full justify-end p-4">
+                    <p className="rounded-full border border-themeGray px-5 py-2.5 text-center text-sm leading-none text-white">
                       {category}
                     </p>
                   </div>
                   {/* content */}
-                  <div className="bg-white backdrop-blur-md bg-opacity-20 p-6 m-2 rounded-lg text-white">
-                    <div className="flex justify-between items-center gap-4">
+                  <div className="m-2 rounded-lg bg-white bg-opacity-20 p-6 text-white backdrop-blur-md">
+                    <div className="flex items-center justify-between gap-4">
                       <div>
-                        <h4 className="group-hover:text-theme text-xl font-semibold line-clamp-1">
+                        <h4 className="line-clamp-1 text-xl font-semibold group-hover:text-themeDark">
                           {title}
                         </h4>
-                        <p className="line-clamp-2 text-sm opacity-75 mt-2 font-light tracking-wide">
+                        <p className="mt-2 line-clamp-2 text-sm font-light tracking-wide opacity-75">
                           {desc}
                         </p>
                       </div>
 
-                      <div className="bg-themeDark p-3 rounded-full">
+                      <div className="rounded-full bg-themeDark p-3">
                         <img
                           src="/public/images/common/button_arrow.png"
                           alt="arrow"
@@ -107,9 +107,12 @@ const Projects = () => {
             })}
           </div>
 
-          <button className="mt-12 bg-themeDark hover:bg-opacity-90 hover:scale-90 text-white px-10 py-4 rounded-full leading-none duration-300">
+          <Link
+            to={`/projects`}
+            className="mt-12 rounded-full bg-themeDark px-10 py-4 leading-none text-white duration-300 hover:scale-90 hover:bg-opacity-90"
+          >
             Explore More
-          </button>
+          </Link>
         </div>
       </div>
     </section>
