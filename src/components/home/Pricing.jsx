@@ -38,8 +38,10 @@ const pricingData = [
 
 const Pricing = () => {
   return (
-    <section className="relative py-20">
-      <img src={abs1} className="absolute left-[25%] top-[16%]" />
+    <section className="relative py-20 z-10">
+      <img src={abs1} className="absolute left-[25%] top-[16%] -z-10" />
+      <img src={abs2} className="absolute right-[20%] top-[13%] -z-10" />
+      <img src={abs3} className="absolute right-[5%] bottom-0 -z-10" />
       <div className="container">
         {/* topbar content */}
         <div className="flex flex-col items-center justify-center gap-4">
@@ -107,7 +109,7 @@ const Pricing = () => {
           {/* special */}
           <div>
             <div className="rounded-xl bg-themeLight text-theme p-4 lg:p-8 grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-8 lg:gap-10 xl:gap-12">
-              <div>
+              <div className="flex flex-col justify-center">
                 {/* topbar */}
                 <div className="mb-6 flex flex-col sm:flex-row items-center justify-between gap-4">
                   <h4 className="flex justify-start gap-2 font-theme text-3xl sm:text-4xl font-bold">
