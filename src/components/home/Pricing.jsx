@@ -1,7 +1,7 @@
 import { FaCheck } from 'react-icons/fa6';
-import abs1 from '/public/images/home/pricing_abs1.png';
-import abs2 from '/public/images/home/pricing_abs2.png';
-import abs3 from '/public/images/home/pricing_abs3.png';
+import abs1 from '/images/home/pricing_abs1.png';
+import abs2 from '/images/home/pricing_abs2.png';
+import abs3 from '/images/home/pricing_abs3.png';
 import { Link } from 'react-router-dom';
 
 const pricingData = [

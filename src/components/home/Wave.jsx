@@ -1,12 +1,12 @@
 import React from 'react';
 import Marquee from 'react-fast-marquee';
 
-const App = () => (
+const Wave = () => (
   <Marquee>
-    <img src="/public/images/home/marquee.png" />
-    <img src="/public/images/home/marquee.png" />
-    <img src="/public/images/home/marquee.png" />
+    <img src="/images/home/marquee.png" />
+    <img src="/images/home/marquee.png" />
+    <img src="/images/home/marquee.png" />
   </Marquee>
 );
 
-export default App;
+export default Wave;

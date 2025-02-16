@@ -1,4 +1,4 @@
-import brand1 from '/public/images/common/brand1.png';
+import brand1 from '/images/common/brand1.png';
 
 const brands = [brand1, brand1, brand1, brand1, brand1];
 

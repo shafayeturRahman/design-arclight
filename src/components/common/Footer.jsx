@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import logo from '/public/images/common/logo.png';
+import logo from '/images/common/logo.png';
 import {
   FaFacebookF,
   FaInstagram,
@@ -12,34 +12,34 @@ import Marquee from 'react-fast-marquee';
 
 const instaData = [
   {
-    image: '/public/images/common/insta1.png',
+    image: '/images/common/insta1.png',
   },
   {
-    image: '/public/images/common/insta1.png',
+    image: '/images/common/insta1.png',
   },
   {
-    image: '/public/images/common/insta1.png',
+    image: '/images/common/insta1.png',
   },
   {
-    image: '/public/images/common/insta1.png',
+    image: '/images/common/insta1.png',
   },
   {
-    image: '/public/images/common/insta1.png',
+    image: '/images/common/insta1.png',
   },
   {
-    image: '/public/images/common/insta1.png',
+    image: '/images/common/insta1.png',
   },
   {
-    image: '/public/images/common/insta1.png',
+    image: '/images/common/insta1.png',
   },
   {
-    image: '/public/images/common/insta1.png',
+    image: '/images/common/insta1.png',
   },
   {
-    image: '/public/images/common/insta1.png',
+    image: '/images/common/insta1.png',
   },
   {
-    image: '/public/images/common/insta1.png',
+    image: '/images/common/insta1.png',
   },
 ];
 
@@ -143,7 +143,7 @@ const Footer = () => {
               <h4 className="uppercase text-[#F4EFEB] opacity-60 font-theme">
                 PHONE
               </h4>
-              <p className="text-[#F6EFE9]">+880 1610 636979</p>
+              <p className="text-[#F6EFE9]">+880 1638 719578</p>
               <h4 className="uppercase text-[#F4EFEB] opacity-60 font-theme mt-6">
                 Email
               </h4>
@@ -156,6 +156,7 @@ const Footer = () => {
             {socialData.map((item, i) => (
               <Link
                 to={item.link}
+                key={i}
                 className="text-lg p-2 border rounded-full border-themeMedium hover:scale-110 duration-300 hover:bg-themeMedium"
               >
                 {item.icon}

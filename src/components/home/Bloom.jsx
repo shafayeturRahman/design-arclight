@@ -6,7 +6,7 @@ const Bloom = () => {
     <section className="flex flex-col md:flex-row gap-4 py-12 items-center">
       {/* left side */}
       <div className="relative w-full md:w-1/2">
-        <img src="/public/images/home/bloom.png" alt="bloom" />
+        <img src="/images/home/bloom.png" alt="bloom" />
       </div>
 
       {/* right side */}
@@ -28,7 +28,7 @@ const Bloom = () => {
           Let's Collaborate
         </Link>
         <img
-          src="/public/images/home/bloom-abs.png"
+          src="/images/home/bloom-abs.png"
           alt="signature"
           className="absolute -bottom-20 right-0 xl:right-36 -z-10"
         />

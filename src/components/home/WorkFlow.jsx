@@ -3,43 +3,43 @@ import Marquee from 'react-fast-marquee';
 const workFlowData = [
   {
     label: 'Top Notch Art Direction',
-    image: '/public/images/common/star.png',
+    image: '/images/common/star.png',
   },
   {
     label: 'Top Notch Art Direction',
-    image: '/public/images/common/star.png',
+    image: '/images/common/star.png',
   },
   {
     label: 'Top Notch Art Direction',
-    image: '/public/images/common/star.png',
+    image: '/images/common/star.png',
   },
   {
     label: 'Top Notch Art Direction',
-    image: '/public/images/common/star.png',
+    image: '/images/common/star.png',
   },
   {
     label: 'Top Notch Art Direction',
-    image: '/public/images/common/star.png',
+    image: '/images/common/star.png',
   },
   {
     label: 'Top Notch Art Direction',
-    image: '/public/images/common/star.png',
+    image: '/images/common/star.png',
   },
   {
     label: 'Top Notch Art Direction',
-    image: '/public/images/common/star.png',
+    image: '/images/common/star.png',
   },
   {
     label: 'Top Notch Art Direction',
-    image: '/public/images/common/star.png',
+    image: '/images/common/star.png',
   },
   {
     label: 'Top Notch Art Direction',
-    image: '/public/images/common/star.png',
+    image: '/images/common/star.png',
   },
   {
     label: 'Top Notch Art Direction',
-    image: '/public/images/common/star.png',
+    image: '/images/common/star.png',
   },
 ];
 

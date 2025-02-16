@@ -6,10 +6,10 @@ const AboutMe = () => {
     <section className="bg-theme text-white flex flex-col md:flex-row gap-4 items-center">
       {/* left side */}
       <div className="relative w-full md:w-1/2 z-10">
-        <img src="/public/images/home/about.png" alt="me" />
+        <img src="/images/home/about.png" alt="me" />
 
         <img
-          src="/public/images/home/about-abs2.png"
+          src="/images/home/about-abs2.png"
           alt="abstract"
           className="absolute -bottom-12 md:bottom-[20%] right-[80%] md:-right-10 scale-75 md:scale-100"
         />
@@ -19,7 +19,7 @@ const AboutMe = () => {
       <div className="p-8 2xl:p-32 relative w-full md:w-1/2 max-w-[900px] z-10">
         <div className="relative z-10">
           <img
-            src="/public/images/home/about-abs1.png"
+            src="/images/home/about-abs1.png"
             alt="abstract"
             className="absolute right-0 -top-10 md:-top-5 z-[-10] scale-75 md:scale-100"
           />

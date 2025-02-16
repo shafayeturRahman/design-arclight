@@ -2,42 +2,42 @@ import { Link } from 'react-router-dom';
 
 const projectsList = [
   {
-    image: '/public/images/home/portfolio1.png',
+    image: '/images/home/portfolio1.png',
     category: 'React',
     title: 'Beautiful Japan Girl',
     desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, doloremque.',
     link: 'https://www.google.com',
   },
   {
-    image: '/public/images/home/portfolio1.png',
+    image: '/images/home/portfolio1.png',
     category: 'React',
     title: 'Beautiful Japan Girl',
     desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, doloremque.',
     link: 'https://www.google.com',
   },
   {
-    image: '/public/images/home/portfolio1.png',
+    image: '/images/home/portfolio1.png',
     category: 'React',
     title: 'Beautiful Japan Girl',
     desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, doloremque.',
     link: 'https://www.google.com',
   },
   {
-    image: '/public/images/home/portfolio1.png',
+    image: '/images/home/portfolio1.png',
     category: 'React',
     title: 'Beautiful Japan Girl',
     desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, doloremque.',
     link: 'https://www.google.com',
   },
   {
-    image: '/public/images/home/portfolio1.png',
+    image: '/images/home/portfolio1.png',
     category: 'React',
     title: 'Beautiful Japan Girl',
     desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, doloremque.',
     link: 'https://www.google.com',
   },
   {
-    image: '/public/images/home/portfolio1.png',
+    image: '/images/home/portfolio1.png',
     category: 'React',
     title: 'Beautiful Japan Girl',
     desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, doloremque.',
@@ -95,7 +95,7 @@ const Projects = () => {
 
                       <div className="rounded-full bg-themeDark p-3">
                         <img
-                          src="/public/images/common/button_arrow.png"
+                          src="/images/common/button_arrow.png"
                           alt="arrow"
                           className="w-12"
                         />

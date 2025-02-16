@@ -4,7 +4,7 @@ import abs2 from '/images/home/hero_abs2.png';
 import abs3 from '/images/home/hero_abs3.png';
 import abs4 from '/images/home/hero_abs4.png';
 
-const Hero = () => {
+const HeroOne = () => {
   return (
     <section className="bg-theme min-h-[50vh] md:min-h-[80vh] flex justify-center items-center text-white relative z-10">
       <img
@@ -26,32 +26,23 @@ const Hero = () => {
 
       <div className="container max-w-[1000px]">
         <div className="flex flex-col justify-center items-center gap-4 -mt-12">
-          <h5 className="border border-themeGray rounded-full py-3 px-4 text-center leading-none">
-            Branding and Website Design
-          </h5>
           <h1 className="text-4xl md:text-6xl lg:text-[80px] text-center capitalize font-theme font-medium">
-            Transforming brands with{' '}
-            <span className="font-light">minimalistic</span> &{' '}
-            <span className="font-light">intentional</span> design that
-            resonates.
+            Ready to turn your vision into a soulful, thriving brand?
           </h1>
-          <p className="max-w-[600px] opacity-75 text-lg text-center">
-            We create brands and websites you’ll love, designed to connect with
-            your clients and work for you for years to come.
+          <p className="max-w-[680px] opacity-75 text-lg text-center">
+            Let's create something magical together! I'm so excited to meet you!
+            <br />
+            Please fill out the form below if you would like to work with me, or
+            if you have any questions about my services.
+            <br />I will get back to you within 48 business hours.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 items-center mt-6">
+          <div className="flex items-center mt-6">
             <Link
-              to={`/contact`}
+              to={`/portfolio`}
               className="bg-themeMedium hover:bg-themeDark hover:scale-90 duration-300 px-10 py-4 rounded-full leading-none"
             >
-              Let's Collaborate
-            </Link>
-            <Link
-              to={`/contact`}
-              className="bg-white hover:bg-themeMedium text-themeMedium hover:text-white px-10 py-4 rounded-full leading-none hover:scale-90 duration-300"
-            >
-              Book a free call
+              Explore Our Work
             </Link>
           </div>
         </div>
@@ -60,4 +51,4 @@ const Hero = () => {
   );
 };
 
-export default Hero;
+export default HeroOne;

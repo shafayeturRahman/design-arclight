@@ -1,4 +1,4 @@
-import logo from '/public/images/common/logo.png';
+import logo from '/images/common/logo.png';
 import { Link } from 'react-router-dom';
 
 const navData = [
@@ -48,15 +48,15 @@ const Navbar = () => {
           </div>
 
           {/* contact */}
-          <Link className="flex items-center hover:scale-90 duration-300 group">
+          <Link
+            to={`/contact`}
+            className="flex items-center hover:scale-90 duration-300 group"
+          >
             <span className="bg-themeMedium group-hover:bg-themeDark px-12 py-3 rounded-full">
               Inquiry
             </span>
             <span className="bg-themeMedium group-hover:bg-themeDark p-3 rounded-full">
-              <img
-                src="/public/images/common/button_arrow.png"
-                alt="arrow down"
-              />
+              <img src="/images/common/button_arrow.png" alt="arrow down" />
             </span>
           </Link>
         </div>

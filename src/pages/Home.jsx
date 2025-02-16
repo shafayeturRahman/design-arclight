@@ -8,6 +8,8 @@ import Wave from '../components/home/Wave';
 import Projects from '../components/home/Projects';
 import AboutMe from '../components/home/AboutMe';
 import Pricing from '../components/home/Pricing';
+import CTA from '../components/common/CTA';
+import Testimonial from '../components/common/Testimonial';
 
 const Home = () => {
   return (
@@ -21,6 +23,8 @@ const Home = () => {
       <Projects />
       <Pricing />
       <AboutMe />
+      <Testimonial />
+      <CTA />
     </>
   );
 };
