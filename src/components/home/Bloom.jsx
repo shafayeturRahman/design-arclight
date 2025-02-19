@@ -1,12 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import image from '/images/home/bloom.png';
 
 const Bloom = () => {
   return (
     <section className="flex flex-col md:flex-row gap-4 py-12 items-center">
       {/* left side */}
       <div className="relative w-full md:w-1/2">
-        <img src="/images/home/bloom.png" alt="bloom" />
+        <img src={image} alt="bloom" />
       </div>
 
       {/* right side */}

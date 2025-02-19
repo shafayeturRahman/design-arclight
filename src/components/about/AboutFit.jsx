@@ -26,7 +26,7 @@ const AboutFit = () => {
             <h4 className="font-medium text-2xl md:text-4xl lg:text-5xl">
               We're a great fit for one another if:
             </h4>
-            <ul className="space-y-3 mt-6">
+            <ul className="space-y-4 mt-6">
               {fitData.map((item, i) => (
                 <li
                   key={i}
@@ -43,7 +43,7 @@ const AboutFit = () => {
             <h4 className="font-medium text-2xl md:text-4xl lg:text-5xl">
               We may not be the best fit if:
             </h4>
-            <ul className="space-y-3 mt-6">
+            <ul className="space-y-4 mt-6">
               {notFitData.map((item, i) => (
                 <li
                   key={i}

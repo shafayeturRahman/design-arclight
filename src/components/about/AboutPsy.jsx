@@ -1,4 +1,4 @@
-import user from '/images/home/about.png';
+import user from '/images/about/about_psy.png';
 
 const AboutPsy = () => {
   return (
@@ -6,7 +6,7 @@ const AboutPsy = () => {
       <div className="container">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-20">
           <div>
-            <img src={user} className="w-full h-full object-cover" />
+            <img src={user} className="w-full h-full object-cover rounded-xl" />
           </div>
 
           {/*  */}
@@ -17,7 +17,7 @@ const AboutPsy = () => {
             <h4 className="font-medium text-2xl md:text-4xl lg:text-5xl">
               From Psychology Graduate to Brand & Web Designer
             </h4>
-            <p className="opacity-75  leading-loose">
+            <p className="opacity-75 leading-loose">
               Design Arclight was born from a simple yet powerful belief—great
               design isn’t just about aesthetics; it’s about connection,
               strategy, and psychology.

@@ -4,7 +4,7 @@ import connect2 from '/images/about/connect2.png';
 
 const AboutConnect = () => {
   return (
-    <section className="bg-theme py-12 md:py-20 text-white">
+    <section className="bg-theme theme_bg py-12 md:py-20 text-white">
       <div className="container">
         <div className="flex flex-col items-start space-y-4 mb-12 md:mb-20 lg:mb-32">
           <div>

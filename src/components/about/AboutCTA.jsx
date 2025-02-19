@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import bgImage from '/images/common/cta-bg.png';
+import bgImage from '/images/about/about_cta.jpg';
 
 const AboutCTA = () => {
   return (

@@ -39,8 +39,8 @@ const pricingData = [
 const Pricing = () => {
   return (
     <section className="relative py-20 z-10">
-      <img src={abs1} className="absolute left-[25%] top-[16%] -z-10" />
-      <img src={abs2} className="absolute right-[20%] top-[13%] -z-10" />
+      <img src={abs1} className="absolute left-[10%] top-[16%] -z-10" />
+      <img src={abs2} className="absolute right-[10%] top-[13%] -z-10" />
       <img src={abs3} className="absolute right-[5%] bottom-0 -z-10" />
       <div className="container">
         {/* topbar content */}
@@ -60,7 +60,10 @@ const Pricing = () => {
             {pricingData.map((item, i) => {
               const { title, desc, price, list } = item;
               return (
-                <div className="rounded-xl bg-themeDark p-4 lg:p-8" key={i}>
+                <div
+                  className="rounded-xl bg-themeDark theme_bg p-4 lg:p-8"
+                  key={i}
+                >
                   {/* topbar */}
                   <div className="mb-6 flex flex-col sm:flex-row items-center justify-between gap-4">
                     <h4 className="flex justify-start gap-2 font-theme text-3xl sm:text-4xl font-bold">
@@ -77,7 +80,7 @@ const Pricing = () => {
                   <p className="min-h-[70px] opacity-75">{desc}</p>
 
                   {/* list */}
-                  <div className="mt-6 rounded-lg bg-theme p-2 lg:p-6 xl:p-8">
+                  <div className="mt-6 rounded-lg bg-[#3C516A] bg-opacity-60 p-2 lg:p-6 xl:p-8">
                     <ul className="flex flex-col gap-y-4 font-theme">
                       {list.map((l, j) => (
                         <li className="flex items-center gap-x-4" key={j}>
@@ -108,7 +111,7 @@ const Pricing = () => {
 
           {/* special */}
           <div>
-            <div className="rounded-xl bg-themeLight text-theme p-4 lg:p-8 grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-8 lg:gap-10 xl:gap-12">
+            <div className="rounded-xl bg-themeLight text-theme theme_bg_light p-4 lg:p-8 grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-8 lg:gap-10 xl:gap-12">
               <div className="flex flex-col justify-center">
                 {/* topbar */}
                 <div className="mb-6 flex flex-col sm:flex-row items-center justify-between gap-4">

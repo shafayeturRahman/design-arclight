@@ -61,3 +61,25 @@ body {
   color: var(--theme);
   font-family: 'Manrope', sans-serif;
 }
+
+.nav-active {
+  clip-path: circle(141.4% at 0 0);
+}
+.nav-not-active {
+  clip-path: circle(0.5% at 0 0);
+}
+
+.theme_bg {
+  background-image: url('/images/common/theme_abstract.png');
+  background-repeat: repeat;
+}
+
+.theme_bg_abstract {
+  background-image: url('/images/common/theme_bg_abstract.png');
+  background-repeat: repeat;
+}
+
+.theme_bg_light {
+  background-image: url('/images/common/theme_light_abstract.png');
+  background-repeat: repeat;
+}

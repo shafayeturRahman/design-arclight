@@ -115,7 +115,7 @@ const Footer = () => {
   return (
     <>
       <Insta />
-      <footer className="bg-theme flex justify-center items-center text-white pt-12 md:pt-20 pb-6 md:pb-8">
+      <footer className="bg-theme theme_bg flex justify-center items-center text-white pt-12 md:pt-20 pb-6 md:pb-8">
         <div className="container">
           <div className="flex flex-wrap justify-between gap-y-12 gap-x-8">
             {/* first */}

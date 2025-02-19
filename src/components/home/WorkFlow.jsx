@@ -1,45 +1,38 @@
 import Marquee from 'react-fast-marquee';
+import image1 from '/images/common/workflow1.png';
+import image2 from '/images/common/workflow2.png';
+import image3 from '/images/common/workflow3.png';
+import image4 from '/images/common/workflow4.png';
+import image5 from '/images/common/workflow5.png';
 
 const workFlowData = [
   {
     label: 'Top Notch Art Direction',
-    image: '/images/common/star.png',
+    image: image1,
+  },
+  {
+    label: ' Design Expertise',
+    image: image2,
+  },
+  {
+    label: 'Swift Workflow',
+    image: image3,
   },
   {
     label: 'Top Notch Art Direction',
-    image: '/images/common/star.png',
+    image: image1,
   },
   {
-    label: 'Top Notch Art Direction',
-    image: '/images/common/star.png',
+    label: 'track every step of the way',
+    image: image4,
   },
   {
-    label: 'Top Notch Art Direction',
-    image: '/images/common/star.png',
+    label: 'No cookie-cutter solution',
+    image: image5,
   },
   {
-    label: 'Top Notch Art Direction',
-    image: '/images/common/star.png',
-  },
-  {
-    label: 'Top Notch Art Direction',
-    image: '/images/common/star.png',
-  },
-  {
-    label: 'Top Notch Art Direction',
-    image: '/images/common/star.png',
-  },
-  {
-    label: 'Top Notch Art Direction',
-    image: '/images/common/star.png',
-  },
-  {
-    label: 'Top Notch Art Direction',
-    image: '/images/common/star.png',
-  },
-  {
-    label: 'Top Notch Art Direction',
-    image: '/images/common/star.png',
+    label: 'Swift Workflow',
+    image: image3,
   },
 ];
 
