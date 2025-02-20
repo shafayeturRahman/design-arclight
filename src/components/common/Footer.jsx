@@ -7,41 +7,7 @@ import {
   FaLinkedin,
   FaTwitter,
 } from 'react-icons/fa6';
-
-import Marquee from 'react-fast-marquee';
-
-const instaData = [
-  {
-    image: '/images/common/insta1.png',
-  },
-  {
-    image: '/images/common/insta1.png',
-  },
-  {
-    image: '/images/common/insta1.png',
-  },
-  {
-    image: '/images/common/insta1.png',
-  },
-  {
-    image: '/images/common/insta1.png',
-  },
-  {
-    image: '/images/common/insta1.png',
-  },
-  {
-    image: '/images/common/insta1.png',
-  },
-  {
-    image: '/images/common/insta1.png',
-  },
-  {
-    image: '/images/common/insta1.png',
-  },
-  {
-    image: '/images/common/insta1.png',
-  },
-];
+import InstaFeed from './InstaFeed';
 
 const navData = [
   {
@@ -89,36 +55,10 @@ const socialData = [
   },
 ];
 
-const Insta = () => {
-  return (
-    <div className="mt-12">
-      <Link to={`#`} className="flex justify-center items-center gap-4">
-        <div className="text-lg p-2 border bg-themeLight rounded-full border-themeMedium">
-          <FaInstagram />
-        </div>
-        <span>designarclight</span>
-      </Link>
-      <Marquee speed={30}>
-        {instaData.map((item, i) => (
-          <div key={i} className="flex justify-center items-center mx-2">
-            <div className="">
-              <img
-                src={item.image}
-                alt={`Insta image`}
-                className="rounded w-full"
-              />
-            </div>
-          </div>
-        ))}
-      </Marquee>
-    </div>
-  );
-};
-
 const Footer = () => {
   return (
     <>
-      <Insta />
+      <InstaFeed />
       <footer className="bg-theme theme_bg flex justify-center items-center text-white pt-12 md:pt-20 pb-6 md:pb-8">
         <div className="container">
           <div className="flex flex-wrap justify-between gap-y-12 gap-x-8">
