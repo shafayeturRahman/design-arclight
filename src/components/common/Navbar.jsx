@@ -37,7 +37,7 @@ const Navbar = () => {
           <div className="flex justify-between items-center gap-4">
             {/* logo */}
             <Link to={`/`} className="flex-grow">
-              <img src={logo} className="max-w-[220px]" />
+              <img src={logo} className="max-w-[180px] sm:max-w-[220px]" />
             </Link>
 
             <div className="hidden lg:flex justify-between items-center flex-grow">
@@ -73,13 +73,13 @@ const Navbar = () => {
               className="relative flex flex-col items-end hover:cursor-pointer group duration-500 lg:hidden z-10 h-5 w-20"
               onClick={() => setNavActive(true)}
             >
-              <span className="block w-20 h-0.5 bg-[#8d8d8d] relative duration-500">
+              <span className="block w-16 h-0.5 bg-white relative duration-500">
                 <span className="absolute right-0 block h-full w-0 group-hover:w-full bg-gradient-to-r from-[#818df8] to-[#23d2ee] duration-500" />
               </span>
-              <span className="block w-9 h-0.5 bg-[#8d8d8d] relative translate-y-2">
+              <span className="block w-9 h-0.5 bg-white relative translate-y-2">
                 <span className="absolute right-0 block h-full w-0 group-hover:w-full bg-gradient-to-r from-[#818df8] to-[#23d2ee] duration-500" />
               </span>
-              <span className="block w-16 h-0.5 bg-[#8d8d8d] relative translate-y-4">
+              <span className="block w-12 h-0.5 bg-white relative translate-y-4">
                 <span className="absolute right-0 block h-full w-0 group-hover:w-full bg-gradient-to-r from-[#818df8] to-[#23d2ee] duration-500" />
               </span>
             </div>

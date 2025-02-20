@@ -64,6 +64,10 @@ const navData = [
     label: 'Portfolio',
     link: '/portfolio',
   },
+  {
+    label: 'Contact',
+    link: '/contact',
+  },
 ];
 
 const socialData = [
@@ -166,7 +170,7 @@ const Footer = () => {
 
           {/* policy */}
           <div className="flex justify-center md:justify-end items-center gap-4">
-            <p>© 2024 Designarclight, All right reserved</p>
+            <p>© 2025 Designarclight, All right reserved</p>
           </div>
         </div>
       </footer>

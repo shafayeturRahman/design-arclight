@@ -21,6 +21,12 @@
   .input_label {
     @apply block font-bold font-theme;
   }
+  .secondary_heading {
+    @apply text-[28px] md:text-4xl lg:text-5xl !leading-[1.15] font-theme text-center font-medium;
+  }
+  .wrapped_category {
+    @apply border border-themeGray rounded-full py-3 px-4 text-center leading-none;
+  }
 }
 
 input[type='radio']:checked {

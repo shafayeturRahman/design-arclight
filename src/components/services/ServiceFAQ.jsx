@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { FaChevronDown, FaChevronUp } from 'react-icons/fa6';
 import { Link } from 'react-router-dom';
+import { AnimatePresence, motion } from 'framer-motion';
 
 const faqData = [
   {
@@ -56,32 +57,34 @@ const FaqItem = ({ faq }) => {
   };
 
   return (
-    <div
-      className={`${
-        isOpen && 'active'
-      } shadow dark:shadow-none bg-theme dark:bg-[#1E2735] rounded-lg mt-6`}
-    >
-      <a
-        href="#!"
+    <div className={`${isOpen && 'active'} bg-[#63889A] rounded-lg mt-6`}>
+      <div
         className="btn p-4 lg:p-6 w-full text-start flex justify-between items-center cursor-pointer"
         onClick={toggleFaq}
       >
         <span>{faq.ques}</span>
         {isOpen ? <FaChevronUp /> : <FaChevronDown />}
-      </a>
-      <div className={`${isOpen ? 'block' : 'hidden'} p-4 lg:p-6 pt-0`}>
-        <p className="opacity-50">{faq.ans}</p>
       </div>
+
+      {/* AnimatePresence ensures exit animations work */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }} // Allow height to be auto
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.3, ease: 'easeInOut' }}
+            style={{ overflow: 'hidden' }} // Ensure overflow is hidden during animation
+          >
+            <p className="p-4 lg:p-6 pt-2 lg:pt-0 opacity-75">{faq.ans}</p>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 };
 
 const ServiceFAQ = () => {
-  const [openIndex, setOpenIndex] = useState(null);
-
-  const toggleFAQ = (index) => {
-    setOpenIndex(openIndex === index ? null : index);
-  };
   return (
     <section className="bg-[#577C8E] text-white py-12 md:py-20 lg:py-32">
       <div className="container">
@@ -111,13 +114,13 @@ const ServiceFAQ = () => {
         </div>
 
         {/* faqs */}
-        <div className="grid grid-cols-12 gap-0 md:gap-6">
-          <div className="col-span-12 md:col-span-6">
+        <div className="grid grid-cols-2 gap-0 md:gap-6">
+          <div className="md:col-span-1">
             {faqData.slice(0, 5).map((faq, i) => (
               <FaqItem faq={faq} key={i} />
             ))}
           </div>
-          <div className="col-span-12 md:col-span-6">
+          <div className="md:col-span-1">
             {faqData.slice(5, 9).map((faq, i) => (
               <FaqItem faq={faq} key={i} />
             ))}

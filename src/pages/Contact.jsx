@@ -1,8 +1,12 @@
+import { useEffect } from 'react';
 import ContactForm from '../components/ContactForm';
 import HeroOne from '../components/common/HeroOne';
 import ImageSliding from '../components/home/ImageSliding';
 
 const Contact = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <section>
       <HeroOne />

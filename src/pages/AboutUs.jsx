@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import AboutHero from '../components/about/AboutHero';
 import CTA from '../components/common/CTA';
 import AboutMe from '../components/home/AboutMe';
@@ -10,6 +10,9 @@ import AboutPhilosophy from '../components/about/AboutPhilosophy';
 import AboutConnect from '../components/about/AboutConnect';
 
 const AboutUs = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       <AboutHero />
