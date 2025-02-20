@@ -1,7 +1,6 @@
 import { createBrowserRouter, Navigate } from 'react-router-dom';
 import MainLayout from '../layouts/MainLayout';
-import PublicLayout from '../layouts/PrivateLayout';
-import PublicRoute from './PublicRoute';
+import PrivateLayout from '../layouts/PrivateLayout';
 import PrivateRoute from './PrivateRoute';
 
 // Import all pages from pages directory
@@ -13,13 +12,10 @@ import Portfolio from '../pages/Portfolio';
 import PortfolioDetails from '../pages/PortfolioDetails';
 import Contact from '../pages/Contact';
 import WebInADay from '../pages/WebInADay';
+import AddProject from '../pages/dashboard/AddProject';
+import Dashboard from '../pages/dashboard/Dashboard';
 
 const router = createBrowserRouter([
-  // {
-  //   path: '/',
-  //   element: <MainLayout />,
-  //   children: [],
-  // },
   // public routes
   {
     path: '/',
@@ -56,6 +52,30 @@ const router = createBrowserRouter([
       {
         path: '/contact',
         element: <Contact />,
+      },
+    ],
+  },
+
+  //private routes
+  {
+    path: '/',
+    element: <PrivateLayout />,
+    children: [
+      {
+        path: '/dashboard',
+        element: (
+          <PrivateRoute>
+            <Dashboard />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: '/add-project',
+        element: (
+          <PrivateRoute>
+            <AddProject />
+          </PrivateRoute>
+        ),
       },
     ],
   },

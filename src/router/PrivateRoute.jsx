@@ -1,17 +1,13 @@
 import React from 'react';
 import { Navigate, useLocation } from 'react-router-dom';
+import { useStore } from '../stores/useStore';
 
 const PrivateRoute = ({ children }) => {
-  const user = JSON.parse(localStorage.getItem('user'));
-  const isLogged = !!user;
+  const { isLogged } = useStore();
   const location = useLocation();
 
   if (!isLogged) {
     return <Navigate to="/sign-in" state={{ from: location }} replace />;
-  }
-
-  if (location.pathname === '/users' && user.role !== 'admin') {
-    return <Navigate to="/" replace />;
   }
 
   return children;

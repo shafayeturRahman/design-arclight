@@ -1,6 +1,6 @@
 import { Outlet } from 'react-router-dom';
 
-const PublicLayout = () => {
+const PrivateLayout = () => {
   return (
     <div className="min-h-screen">
       <Outlet />
@@ -8,4 +8,4 @@ const PublicLayout = () => {
   );
 };
 
-export default PublicLayout;
+export default PrivateLayout;

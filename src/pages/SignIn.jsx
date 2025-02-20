@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { toast } from 'react-toastify';
 import { useStore } from '../stores/useStore';
 
 const SignIn = () => {
@@ -13,13 +12,13 @@ const SignIn = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
     if (
-      formData.email === import.meta.env.EMAIL ||
-      formData.password === import.meta.env.PASSWORD
+      formData.email === import.meta.env.VITE_ADMIN_EMAIL ||
+      formData.password === import.meta.env.VITE_ADMIN_PASSWORD
     ) {
       toggleLogin();
-      navigate('/');
-      toast.success('Login successful');
+      navigate('/dashboard');
     }
   };
 
@@ -50,7 +49,7 @@ const SignIn = () => {
               <input
                 id="email"
                 name="email"
-                type="email"
+                type="text"
                 required
                 className="input-field"
                 placeholder="Enter your email"
@@ -78,7 +77,7 @@ const SignIn = () => {
           <div>
             <button
               type="submit"
-              className="bg-theme w-full py-3 rounded-md text-white text-center"
+              className="bg-theme hover:bg-cyan-500 duration-300 w-full py-3 rounded-md text-white text-center"
             >
               Sign in
             </button>
