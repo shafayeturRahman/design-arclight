@@ -46,7 +46,11 @@ const ProjectCard = ({ project }) => {
 
   return (
     <div className="rounded-xl overflow-hidden ring-1">
-      <img src={showImage} alt="" className="w-full h-44 object-cover" />
+      <img
+        src={`https://res.cloudinary.com/deqpfnzrp/image/upload/v1740149985/${showImage}`}
+        alt=""
+        className="w-full h-44 object-cover"
+      />
       <div className="p-4">
         <h4 className="font-theme font-medium text-xl md:text-2xl">{title}</h4>
         <p className="line-clamp-2">{desc}</p>

@@ -2,53 +2,7 @@ import { Link } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { toast } from 'react-toastify';
-import ProjectCard from '../../components/ProjectCard';
 import ProjectsSkeliton from './ProjectsSkeliton';
-
-const projectsList = [
-  {
-    image: '/images/home/portfolio1.png',
-    category: 'React',
-    title: 'Beautiful Japan Girl',
-    desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, doloremque.',
-    link: 'https://www.google.com',
-  },
-  {
-    image: '/images/home/portfolio1.png',
-    category: 'React',
-    title: 'Beautiful Japan Girl',
-    desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, doloremque.',
-    link: 'https://www.google.com',
-  },
-  {
-    image: '/images/home/portfolio1.png',
-    category: 'React',
-    title: 'Beautiful Japan Girl',
-    desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, doloremque.',
-    link: 'https://www.google.com',
-  },
-  {
-    image: '/images/home/portfolio1.png',
-    category: 'React',
-    title: 'Beautiful Japan Girl',
-    desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, doloremque.',
-    link: 'https://www.google.com',
-  },
-  {
-    image: '/images/home/portfolio1.png',
-    category: 'React',
-    title: 'Beautiful Japan Girl',
-    desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, doloremque.',
-    link: 'https://www.google.com',
-  },
-  {
-    image: '/images/home/portfolio1.png',
-    category: 'React',
-    title: 'Beautiful Japan Girl',
-    desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, doloremque.',
-    link: 'https://www.google.com',
-  },
-];
 
 const PortProjects = () => {
   const [allProjects, setAllProjects] = useState([]);
@@ -106,17 +60,17 @@ const PortProjects = () => {
               </div>
             ) : (
               allProjects.slice(0, 6).map((project, i) => {
-                const { image, category, title, desc, link } = project;
+                const { showImage, category, title, desc, _id } = project;
                 return (
                   <Link
-                    to={link}
+                    to={`/portfolio/${_id}`}
                     key={i}
                     className="group relative flex min-h-[450px] flex-col items-center justify-between overflow-hidden rounded-lg lg:min-h-[500px] xl:min-h-[600px]"
                   >
                     {/* image */}
                     <div className="absolute inset-0">
                       <img
-                        src={image}
+                        src={`https://res.cloudinary.com/deqpfnzrp/image/upload/v1740149985/${showImage}`}
                         alt={title}
                         className="h-full w-full object-cover"
                       />
@@ -139,12 +93,14 @@ const PortProjects = () => {
                           </p>
                         </div>
 
-                        <div className="rounded-full bg-themeDark p-3">
-                          <img
-                            src="/images/common/button_arrow.png"
-                            alt="arrow"
-                            className="w-12"
-                          />
+                        <div>
+                          <div className="rounded-full bg-themeDark min-w-10 h-10 p-2 flex items-center justify-center">
+                            <img
+                              src="/images/common/button_arrow.png"
+                              alt="arrow"
+                              className="w-full h-full"
+                            />
+                          </div>
                         </div>
                       </div>
                     </div>
