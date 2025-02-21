@@ -1,9 +1,9 @@
 import { useMutation } from '@tanstack/react-query';
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
-const AddProject = () => {
+const EditProject = () => {
   const [title, setTitle] = useState('');
   const [desc, setDesc] = useState('');
   const [category, setCategory] = useState('');
@@ -17,6 +17,36 @@ const AddProject = () => {
   const [bottomImages, setBottomImages] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
+  const params = useParams();
+  const projectId = params.id;
+
+  useEffect(() => {
+    const fetchProjectData = async () => {
+      const response = await fetch(
+        `${import.meta.env.VITE_SERVER_URL}/api/projects/${projectId}`
+      );
+      if (response.ok) {
+        const data = await response.json();
+        const projectData = data.data;
+        setTitle(projectData.title);
+        setDesc(projectData.desc);
+        setCategory(projectData.category);
+        setStudy(projectData.study);
+        setPlatform(projectData.platform);
+        setVibe(projectData.vibe);
+        setBannerImage(projectData.bannerImage);
+        setShowImage(projectData.showImage);
+        setMainImage(projectData.mainImage);
+        setTopImages(projectData.topImages);
+        setBottomImages(projectData.bottomImages);
+      } else {
+        toast.error('Failed to fetch project data');
+      }
+    };
+
+    fetchProjectData();
+  }, [projectId]);
+
   const handleImageChange = (e, setImage, multiple = false) => {
     if (multiple) {
       setImage([...e.target.files]);
@@ -25,29 +55,29 @@ const AddProject = () => {
     }
   };
 
-  const addProjectMutation = useMutation({
-    mutationFn: async (newProject) => {
+  const editProjectMutation = useMutation({
+    mutationFn: async (updatedProject) => {
       const formData = new FormData();
-      formData.append('title', newProject.title);
-      formData.append('desc', newProject.desc);
-      formData.append('category', newProject.category);
-      formData.append('study', newProject.study);
-      formData.append('platform', newProject.platform);
-      formData.append('vibe', newProject.vibe);
-      formData.append('bannerImage', newProject.bannerImage);
-      formData.append('mainImage', newProject.mainImage);
-      formData.append('showImage', newProject.showImage);
-      newProject.topImages.forEach((image) =>
+      formData.append('title', updatedProject.title);
+      formData.append('desc', updatedProject.desc);
+      formData.append('category', updatedProject.category);
+      formData.append('study', updatedProject.study);
+      formData.append('platform', updatedProject.platform);
+      formData.append('vibe', updatedProject.vibe);
+      formData.append('bannerImage', updatedProject.bannerImage);
+      formData.append('mainImage', updatedProject.mainImage);
+      formData.append('showImage', updatedProject.showImage);
+      updatedProject.topImages.forEach((image) =>
         formData.append('topImages', image)
       );
-      newProject.bottomImages.forEach((image) =>
+      updatedProject.bottomImages.forEach((image) =>
         formData.append('bottomImages', image)
       );
 
       const response = await fetch(
-        `${import.meta.env.VITE_SERVER_URL}/api/projects`,
+        `${import.meta.env.VITE_SERVER_URL}/api/projects/${projectId}`,
         {
-          method: 'POST',
+          method: 'PATCH',
           body: formData,
         }
       );
@@ -55,9 +85,9 @@ const AddProject = () => {
       if (!response.ok) {
         setIsLoading(false);
         const errorData = await response.json();
-        toast.error(errorData.message || 'Failed to add project');
+        toast.error(errorData.message || 'Failed to update project');
         throw new Error(
-          errorData.message || `Failed to add project: ${response.status}`
+          errorData.message || `Failed to update project: ${response.status}`
         );
       }
 
@@ -65,30 +95,18 @@ const AddProject = () => {
     },
     onSuccess: () => {
       setIsLoading(false);
-      // Reset form fields
-      setTitle('');
-      setDesc('');
-      setCategory('');
-      setStudy('');
-      setPlatform('');
-      setVibe('');
-      setBannerImage(null);
-      setShowImage(null);
-      setMainImage(null);
-      setTopImages([]);
-      setBottomImages([]);
-      toast.success('Project added successfully');
+      toast.success('Project updated successfully');
     },
     onError: (error) => {
       setIsLoading(false);
-      toast.error(error.message || 'Failed to add project');
+      toast.error(error.message || 'Failed to update project');
     },
   });
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setIsLoading(true);
-    addProjectMutation.mutate({
+    editProjectMutation.mutate({
       title,
       desc,
       category,
@@ -107,9 +125,7 @@ const AddProject = () => {
     <div className="min-h-screen flex items-center justify-center py-12">
       <div className="container max-w-3xl">
         <div className="w-full p-4 bg-theme text-white rounded-xl">
-          <h2 className="text-2xl font-bold text-center mb-4">
-            Add New Project
-          </h2>
+          <h2 className="text-2xl font-bold text-center mb-4">Edit Project</h2>
           <form onSubmit={handleSubmit} encType="multipart/form-data">
             {/* title */}
             <div className="mb-4">
@@ -119,7 +135,6 @@ const AddProject = () => {
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
                 className="w-full p-2 rounded bg-gray-600 focus:outline-none focus:bg-gray-500"
-                required
               />
             </div>
             {/* desc */}
@@ -129,7 +144,6 @@ const AddProject = () => {
                 value={desc}
                 onChange={(e) => setDesc(e.target.value)}
                 className="w-full p-2 rounded bg-gray-600 focus:outline-none focus:bg-gray-500"
-                required
               />
             </div>
 
@@ -143,7 +157,6 @@ const AddProject = () => {
                   placeholder="elegant, classic, romantic, elevated, timeless"
                   onChange={(e) => setStudy(e.target.value)}
                   className="w-full p-2 rounded bg-gray-600 focus:outline-none focus:bg-gray-500"
-                  required
                 />
               </div>
               {/* platform */}
@@ -155,7 +168,6 @@ const AddProject = () => {
                   placeholder="elegant, classic, romantic, elevated, timeless"
                   onChange={(e) => setPlatform(e.target.value)}
                   className="w-full p-2 rounded bg-gray-600 focus:outline-none focus:bg-gray-500"
-                  required
                 />
               </div>
             </div>
@@ -170,7 +182,6 @@ const AddProject = () => {
                   placeholder="elegant, classic, romantic, elevated, timeless"
                   onChange={(e) => setVibe(e.target.value)}
                   className="w-full p-2 rounded bg-gray-600 focus:outline-none focus:bg-gray-500"
-                  required
                 />
               </div>
               {/* category */}
@@ -180,7 +191,6 @@ const AddProject = () => {
                   value={category}
                   onChange={(e) => setCategory(e.target.value)}
                   className="w-full p-2 rounded bg-gray-600 focus:outline-none focus:bg-gray-500"
-                  required
                 >
                   <option value="" defaultSelected hidden>
                     Select Category
@@ -201,7 +211,6 @@ const AddProject = () => {
                   accept="image/*"
                   onChange={(e) => handleImageChange(e, setShowImage)}
                   className="w-full p-2 rounded bg-gray-600"
-                  required
                 />
               </div>
               {/* banner image */}
@@ -212,7 +221,6 @@ const AddProject = () => {
                   accept="image/*"
                   onChange={(e) => handleImageChange(e, setBannerImage)}
                   className="w-full p-2 rounded bg-gray-600"
-                  required
                 />
               </div>
             </div>
@@ -226,7 +234,6 @@ const AddProject = () => {
                   accept="image/*"
                   onChange={(e) => handleImageChange(e, setMainImage)}
                   className="w-full p-2 rounded bg-gray-600"
-                  required
                 />
               </div>
               {/* top images */}
@@ -238,7 +245,6 @@ const AddProject = () => {
                   multiple
                   onChange={(e) => handleImageChange(e, setTopImages, true)}
                   className="w-full p-2 rounded bg-gray-600"
-                  required
                 />
               </div>
             </div>
@@ -252,7 +258,6 @@ const AddProject = () => {
                 multiple
                 onChange={(e) => handleImageChange(e, setBottomImages, true)}
                 className="w-full p-2 rounded bg-gray-600"
-                required
               />
             </div>
 
@@ -261,7 +266,7 @@ const AddProject = () => {
               className="w-full p-2 bg-cyan-600 hover:bg-cyan-500 text-white rounded"
               disabled={isLoading}
             >
-              {isLoading ? 'Adding...' : 'Add Project'}
+              {isLoading ? 'Updating...' : 'Update Project'}
             </button>
           </form>
         </div>{' '}
@@ -270,4 +275,4 @@ const AddProject = () => {
   );
 };
 
-export default AddProject;
+export default EditProject;

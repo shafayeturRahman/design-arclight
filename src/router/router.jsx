@@ -14,6 +14,7 @@ import Contact from '../pages/Contact';
 import WebInADay from '../pages/WebInADay';
 import AddProject from '../pages/dashboard/AddProject';
 import Dashboard from '../pages/dashboard/Dashboard';
+import EditProject from '../pages/dashboard/EditProject';
 
 const router = createBrowserRouter([
   // public routes
@@ -74,6 +75,14 @@ const router = createBrowserRouter([
         element: (
           <PrivateRoute>
             <AddProject />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: '/edit-project/:id',
+        element: (
+          <PrivateRoute>
+            <EditProject />
           </PrivateRoute>
         ),
       },
