@@ -89,3 +89,16 @@ body {
   background-image: url('/images/common/theme_light_abstract.png');
   background-repeat: repeat;
 }
+
+.blink_skeliton {
+  animation: blink 2s linear infinite;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
