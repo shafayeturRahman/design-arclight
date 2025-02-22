@@ -4,7 +4,7 @@ import bgImage from '/images/about/about_cta.jpg';
 const AboutCTA = () => {
   return (
     <section
-      className="relativ my-12 z-10 py-20 md:py-32 bg-cover font-theme"
+      className="relativ mb-12 z-10 py-20 md:py-32 bg-cover font-theme"
       style={{ backgroundImage: `url(${bgImage})` }}
     >
       <div className="container ">

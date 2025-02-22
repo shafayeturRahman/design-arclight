@@ -30,7 +30,7 @@
 }
 
 input[type='radio']:checked {
-  accent-color: var(--theme); /* Use the theme color for active radio buttons */
+  accent-color: var(--theme);
 }
 
 * {
@@ -78,6 +78,7 @@ body {
 .theme_bg {
   background-image: url('/images/common/theme_abstract.png');
   background-repeat: repeat;
+  background-position: center;
 }
 
 .theme_bg_abstract {

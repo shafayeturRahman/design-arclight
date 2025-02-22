@@ -6,6 +6,7 @@ import ProjectsSkeliton from './ProjectsSkeliton';
 
 const PortProjects = () => {
   const [allProjects, setAllProjects] = useState([]);
+  const [selectedCategory, setSelectedCategory] = useState('branding');
 
   // Fetch all projects
   const {
@@ -35,6 +36,16 @@ const PortProjects = () => {
     }
   }, [projects]);
 
+  // Function to handle category selection
+  const handleCategorySelect = (category) => {
+    setSelectedCategory(category);
+  };
+
+  // Filtered projects based on selected category
+  const filteredProjects = selectedCategory
+    ? allProjects.filter((project) => project.category === selectedCategory)
+    : allProjects;
+
   if (error) {
     toast.error(error.message);
     return <div>Error: {error.message}</div>;
@@ -46,20 +57,54 @@ const PortProjects = () => {
           <h5 className="rounded-full border border-themeGray px-4 py-3 text-center leading-none">
             A Glimpse of My Work
           </h5>
-          <h1 className="mb-20 max-w-[600px] text-center font-theme text-4xl font-medium capitalize !leading-[1.175] md:text-5xl">
+          <h1 className="max-w-[600px] text-center font-theme text-4xl font-medium capitalize !leading-[1.175] md:text-5xl">
             Where Every Frame Speaks Every Detail Inspires
           </h1>
+
+          {/* filters */}
+          <div className="mb-20">
+            <ul className="flex gap-8 text-nowrap font-theme text-xl !mt-4 flex-col md:flex-row justify-center items-center">
+              <li
+                onClick={() => handleCategorySelect('branding')}
+                className={`cursor-pointer ${
+                  selectedCategory === 'branding' ? 'bg-theme text-white' : ''
+                } py-2 px-6 rounded-full hover:bg-theme hover:text-white duration-300`}
+              >
+                Branding
+              </li>
+              <li
+                onClick={() => handleCategorySelect('custom-website')}
+                className={`cursor-pointer ${
+                  selectedCategory === 'custom-website'
+                    ? 'bg-theme text-white'
+                    : ''
+                } py-2 px-6 rounded-full hover:bg-theme hover:text-white duration-300`}
+              >
+                Custom Website
+              </li>
+              <li
+                onClick={() => handleCategorySelect('website-in-a-day')}
+                className={`cursor-pointer ${
+                  selectedCategory === 'website-in-a-day'
+                    ? 'bg-theme text-white'
+                    : ''
+                } py-2 px-6 rounded-full hover:bg-theme hover:text-white duration-300`}
+              >
+                Website In a day
+              </li>
+            </ul>
+          </div>
 
           {/* projects */}
           <div className="grid w-full grid-cols-1 gap-4 md:grid-cols-2 md:gap-8 lg:grid-cols-3">
             {isLoading ? (
               <ProjectsSkeliton />
-            ) : allProjects.length === 0 ? (
+            ) : filteredProjects.length === 0 ? (
               <div className="font-bold text-xl font-theme">
                 Oops! No Projects found to show you!🤕
               </div>
             ) : (
-              allProjects.slice(0, 6).map((project, i) => {
+              filteredProjects.slice(0, 6).map((project, i) => {
                 const { showImage, category, title, desc, _id } = project;
                 return (
                   <Link

@@ -1,15 +1,18 @@
-import { Link } from 'react-router-dom';
 import abs1 from '/images/home/hero_abs1.png';
 import abs2 from '/images/home/hero_abs2.png';
 import abs3 from '/images/home/hero_abs3.png';
 import abs4 from '/images/home/hero_abs4.png';
 import SecButton from '../common/SecButton';
+import { useEffect } from 'react';
 
 const buttonData = {
   classname: `bg-[#567C8D]`,
 };
 
 const WebHero = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <section className="bg-theme theme_bg min-h-[100vh] md:min-h-[80vh] flex justify-center items-center text-white relative z-10">
       <img

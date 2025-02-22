@@ -1,7 +1,11 @@
 import { Link } from 'react-router-dom';
 import bannerImage from '/images/services/service_hero.png';
+import { useEffect } from 'react';
 
 const ServicesHero = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div className="flex flex-col lg:flex-row gap-4 lg:min-h-[70vh] lg:h-[70vh] xl:h-[80vh] ">
       <div className="w-full lg:w-2/5 h-[200px] lg:h-full">

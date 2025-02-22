@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import logo from '/images/common/logo.png';
+import logo from '/images/common/logo.svg';
 import { Link, useLocation } from 'react-router-dom';
 
 const navData = [
