@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useMutation } from '@tanstack/react-query';
 import { Link } from 'react-router-dom';
 
@@ -11,19 +11,28 @@ const ContactForm = () => {
     websiteURL: '',
     startDate: '',
     completionDate: '',
-    services: '',
+    interestedService: '',
     budget: '',
-    desc: '',
+    description: '',
   });
 
-  const mutation = useMutation((newContact) => {
-    return fetch(`${import.meta.env.VITE_SERVER_URL}/api/contact`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(newContact),
-    });
+  const mutation = useMutation({
+    mutationFn: async (newContact) => {
+      const response = await fetch(
+        `${import.meta.env.VITE_SERVER_URL}/api/contact`,
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(newContact),
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error(`Error: ${response.statusText}`);
+      }
+
+      return response.json();
+    },
   });
 
   const handleChange = (e) => {
@@ -35,6 +44,11 @@ const ContactForm = () => {
     e.preventDefault();
     mutation.mutate(formData);
   };
+
+  useEffect(() => {
+    console.log('Mutation Status:', mutation.status);
+    console.log(mutation.isLoading);
+  }, [mutation.status, mutation.isLoading]);
 
   return (
     <div className="max-w-4xl mx-auto p-4 md:p-10 xl:p-12 bg-[#ECECEA] my-12 rounded-xl">
@@ -154,18 +168,18 @@ const ContactForm = () => {
           </div>
         </div>
 
-        {/* services */}
+        {/* interestedService */}
         <div className="w-full">
           <label className="input_label">
-            What services are you interested in? *
+            What service are you interested in? *
           </label>
           <div className="flex flex-col space-y-2 mt-2">
             <label>
               <input
                 type="radio"
-                name="services"
+                name="interestedService"
                 value="Branding"
-                checked={formData.services === 'Branding'}
+                checked={formData.interestedService === 'Branding'}
                 onChange={handleChange}
                 required
               />{' '}
@@ -174,9 +188,9 @@ const ContactForm = () => {
             <label>
               <input
                 type="radio"
-                name="services"
+                name="interestedService"
                 value="Custom Website"
-                checked={formData.services === 'Custom Website'}
+                checked={formData.interestedService === 'Custom Website'}
                 onChange={handleChange}
                 required
               />{' '}
@@ -185,9 +199,9 @@ const ContactForm = () => {
             <label>
               <input
                 type="radio"
-                name="services"
+                name="interestedService"
                 value="Website in a Day"
-                checked={formData.services === 'Website in a Day'}
+                checked={formData.interestedService === 'Website in a Day'}
                 onChange={handleChange}
                 required
               />{' '}
@@ -239,14 +253,14 @@ const ContactForm = () => {
         </div>
 
         <div className="w-full">
-          <label htmlFor="desc" className="input_label">
+          <label htmlFor="description" className="input_label">
             Tell us a little about your business & what you do.
           </label>
           <textarea
-            id="desc"
-            name="desc"
+            id="description"
+            name="description"
             placeholder="What is your mission & vision? What do you do & what do you offer? Do you have any background story, or dreams that you would like me to know about?"
-            value={formData.desc}
+            value={formData.description}
             onChange={handleChange}
             className="input-field"
             rows="4"
@@ -257,11 +271,15 @@ const ContactForm = () => {
         <div className="flex justify-end pt-6">
           <button
             type="submit"
-            className="flex items-center hover:scale-90 duration-300 group text-white"
+            className={`flex items-center group text-white ${
+              mutation.status == 'pending'
+                ? 'opacity-50 cursor-not-allowed'
+                : 'hover:scale-90 duration-300'
+            }`}
             disabled={mutation.isLoading}
           >
             <span className="bg-themeDark group-hover:bg-themeDark px-12 py-3 rounded-full">
-              {mutation.isLoading ? 'Submitting...' : 'Submit Now'}
+              {mutation.status == 'pending' ? 'Submitting...' : 'Submit Now'}
             </span>
             <span className="bg-themeDark group-hover:bg-themeDark p-3 rounded-full">
               <img src="/images/common/button_arrow.png" alt="arrow down" />
