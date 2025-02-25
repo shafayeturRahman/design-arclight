@@ -22,7 +22,6 @@ const WebInADay = () => {
       <WebServices />
       <AboutMe />
       <WebFAQ />
-      <Testimonial />
       <CTA2 />
     </>
   );

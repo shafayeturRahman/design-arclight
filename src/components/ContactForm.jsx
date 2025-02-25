@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
+import { useMutation } from '@tanstack/react-query';
+import { Link } from 'react-router-dom';
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
-    fullName: '',
+    name: '',
     email: '',
     businessName: '',
     socialMediaHandle: '',
@@ -14,6 +16,16 @@ const ContactForm = () => {
     desc: '',
   });
 
+  const mutation = useMutation((newContact) => {
+    return fetch(`${import.meta.env.VITE_SERVER_URL}/api/contact`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(newContact),
+    });
+  });
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
@@ -21,8 +33,7 @@ const ContactForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission logic here
-    console.log(formData);
+    mutation.mutate(formData);
   };
 
   return (
@@ -31,16 +42,16 @@ const ContactForm = () => {
         <div className="flex flex-col md:flex-row gap-4 md:gap-12 lg:gap-20 xl:gap-20">
           {/* name */}
           <div className="md:w-1/2">
-            <label htmlFor="fullName" className="input_label">
-              Full Name *
+            <label htmlFor="name" className="input_label">
+              Your Name *
             </label>
             <input
               type="text"
-              id="fullName"
-              name="fullName"
+              id="name"
+              name="name"
               placeholder="Enter Your Name"
               required
-              value={formData.fullName}
+              value={formData.name}
               onChange={handleChange}
               className="input-field"
             />
@@ -247,15 +258,33 @@ const ContactForm = () => {
           <button
             type="submit"
             className="flex items-center hover:scale-90 duration-300 group text-white"
+            disabled={mutation.isLoading}
           >
             <span className="bg-themeDark group-hover:bg-themeDark px-12 py-3 rounded-full">
-              Submit Now
+              {mutation.isLoading ? 'Submitting...' : 'Submit Now'}
             </span>
             <span className="bg-themeDark group-hover:bg-themeDark p-3 rounded-full">
               <img src="/images/common/button_arrow.png" alt="arrow down" />
             </span>
-          </button>{' '}
+          </button>
         </div>
+
+        {/* success message */}
+        {mutation.isSuccess && (
+          <p className="text-emerald-400">Your form was sent successfully!</p>
+        )}
+        {/* error message */}
+        {mutation.isError && (
+          <p className="text-red-400">
+            Something went wrong! Form sending failed. Please contact at{' '}
+            <Link
+              className="underline text-blue-600"
+              to="mailto:contact@designarclight.com"
+            >
+              contact@designarclight.com
+            </Link>
+          </p>
+        )}
       </form>
     </div>
   );
