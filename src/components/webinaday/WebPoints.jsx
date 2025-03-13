@@ -61,7 +61,7 @@ const WebPoints = () => {
         ))}
 
         <div className="mt-6 flex justify-center hover:text-white">
-          <SecButton data={buttonData} />
+          <SecButton data={buttonData} className={`!bg-[#C7D9E5]`}/>
         </div>
       </div>
     </section>

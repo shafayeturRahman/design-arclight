@@ -5,7 +5,7 @@ const ServiceShape = () => {
     <section className="relative z-10 py-12 md:py-20 lg:py-32 theme_bg_abstract">
       <div className="container max-w-[850px]">
         <div className="flex flex-col gap-y-6 items-center text-center">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium !leading-[1.25]">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium !leading-[1.25] font-theme">
             No room for dull or forgettable— your brand deserves to stand out.
           </h2>
           <p className="mb-4 max-w-[600px] lg:text-lg opacity-90">
@@ -16,7 +16,7 @@ const ServiceShape = () => {
           </p>
           <Link
             to={`/contact`}
-            className="bg-themeMedium hover:bg-themeDark hover:scale-90 duration-300 px-10 py-4 rounded-full leading-none text-white"
+            className="bg-theme hover:bg-themeDark hover:scale-90 duration-300 px-10 py-4 rounded-full leading-none text-white"
           >
             Shape Your Story
           </Link>

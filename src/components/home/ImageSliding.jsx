@@ -2,15 +2,15 @@ import Marquee from 'react-fast-marquee';
 
 const images = [
   '/images/common/work1.png',
+  '/images/common/work2.png',
+  '/images/common/work3.png',
+  '/images/common/work4.png',
+  '/images/common/work5.png',
   '/images/common/work1.png',
-  '/images/common/work1.png',
-  '/images/common/work1.png',
-  '/images/common/work1.png',
-  '/images/common/work1.png',
-  '/images/common/work1.png',
-  '/images/common/work1.png',
-  '/images/common/work1.png',
-  '/images/common/work1.png',
+  '/images/common/work2.png',
+  '/images/common/work3.png',
+  '/images/common/work4.png',
+  '/images/common/work5.png',
 ];
 
 const ImageSliding = () => {

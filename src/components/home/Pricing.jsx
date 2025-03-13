@@ -46,7 +46,7 @@ const Pricing = () => {
         {/* topbar content */}
         <div className="flex flex-col items-center justify-center gap-4">
           <h5 className="rounded-full border border-themeGray px-4 py-3 text-center leading-none">
-            From Concept to Relity
+            From Concept to Reality
           </h5>
           <h1 className="mb-20 max-w-[600px] text-center font-theme text-4xl font-medium capitalize !leading-[1.175] md:text-5xl">
             Solutions as <span className="font-bold">Unique</span> as your{' '}

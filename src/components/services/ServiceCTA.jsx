@@ -7,7 +7,7 @@ const ServiceCTA = () => {
       <div className="container">
         {/* content */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-20 xl:gap-32 text-center md:text-start">
-          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-theme font-light !leading-[1.2] mb-4">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-theme font-light !leading-[1.35] mb-4">
             Turning your ideas, passion, and business into powerful branding &
             websites that captivate and convert your dream clients into loyal
             customers.
@@ -33,9 +33,9 @@ const ServiceCTA = () => {
         <div className="my-12 flex justify-center items-center">
           <Link
             to={`/contact`}
-            className="capitalize rounded-full border border-themeDark bg-themeDark px-8 py-4 font-theme text-white duration-300 hover:scale-90 hover:bg-theme text-center leading-normal"
+            className="capitalize rounded-full border border-[#C7D9E5] bg-[#C7D9E5] hover:border-themeDark px-8 py-4 font-theme text-theme hover:text-white duration-300 hover:scale-90 hover:bg-themeDark text-center leading-normal"
           >
-            let's become business besties & make it happen
+            Let's become business besties & make it happen
           </Link>
         </div>
         {/* image */}

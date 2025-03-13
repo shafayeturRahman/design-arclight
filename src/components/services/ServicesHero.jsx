@@ -7,7 +7,7 @@ const ServicesHero = () => {
     window.scrollTo(0, 0);
   }, []);
   return (
-    <div className="flex flex-col lg:flex-row gap-4 lg:min-h-[70vh] lg:h-[70vh] xl:h-[80vh] ">
+    <div className="flex flex-col lg:flex-row gap-4 lg:min-h-[70vh] lg:h-[70vh] xl:h-[85vh]">
       <div className="w-full lg:w-2/5 h-[200px] lg:h-full">
         <img
           src={bannerImage}
@@ -29,7 +29,7 @@ const ServicesHero = () => {
 
         <Link
           to={`/contact`}
-          className="bg-themeMedium hover:bg-themeDark hover:scale-90 duration-300 px-10 py-4 rounded-full leading-none text-white"
+          className="bg-theme hover:bg-themeDark hover:scale-90 duration-300 px-10 py-4 rounded-full leading-none text-white"
         >
           Let's Collaborate
         </Link>

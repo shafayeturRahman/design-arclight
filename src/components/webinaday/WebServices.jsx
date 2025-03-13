@@ -24,7 +24,7 @@ const WebServices = () => {
             ))}
           </div>
 
-          <h4 className="secondary_heading  !font-light text-[22px] md:text-3xl lg:text-4xl">
+          <h4 className="secondary_heading text-[22px] md:text-3xl lg:text-4xl !font-bold">
             Need a stunning website in no time? <br />
             This service is designed for you!
           </h4>

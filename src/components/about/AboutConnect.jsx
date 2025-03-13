@@ -13,7 +13,7 @@ const AboutConnect = () => {
             </h5>
           </div>
 
-          <h1 className="text-4xl md:text-5xl capitalize font-theme font-medium !leading-tight">
+          <h1 className="text-4xl md:text-5xl font-theme font-medium !leading-tight">
             Yes, it's possible—and it can be your reality.
             <br />
             Imagine a website and brand that not only grabs attention but also
@@ -25,14 +25,14 @@ const AboutConnect = () => {
         <div className="flex flex-col lg:flex-row gap-4 lg:gap-12">
           <div className="flex flex-col sm:flex-row gap-4 w-full lg:w-3/5">
             <img src={connect1} alt="" className="w-full sm:w-1/2" />
-            <div className="flex flex-col justify-center w-full sm:w-1/2 space-y-12">
-              <p className="text-lg">
+            <div className="flex flex-col justify-end w-full sm:w-1/2 space-y-12 lg:space-y-36">
+              <p className="text-lg !leading-[1.75]">
                 With a strategic, user-focused approach, I blend stunning design
                 with intentional branding to create a digital presence that not
                 only looks good but works for you—driving engagement, building
                 trust, and converting visitors into loyal customers. Let’s craft
                 a website and brand that stands out, ranks higher, and attracts
-                the right audience effortlessly
+                the right audience effortlessly.
               </p>
               <div>
                 <Link

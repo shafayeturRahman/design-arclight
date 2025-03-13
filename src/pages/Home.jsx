@@ -27,6 +27,7 @@ const Home = () => {
       <Pricing />
       <AboutMe />
       <Testimonial />
+      <Wave />
       <CTA />
     </>
   );

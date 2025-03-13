@@ -41,7 +41,7 @@ const servicesData = [
   {
     image: image3,
     title: 'A VIP Day experience',
-    category: 'Custom Branding Design',
+    category: 'Website in a day',
     desc: `Imagine having a website that perfectly represents your brand and connects with your audience, crafted with precision and delivered faster than you thought possible with the Website in a Day experience, you’ll get just that without the expensive price tag.`,
 
     requirements: `you must have all copy, images and content beforehand.`,
@@ -86,11 +86,11 @@ const Service = ({ item, index }) => {
       </div>
 
       <div className="w-full lg:w-1/2 flex flex-col justify-center items-start space-y-4 lg:max-w-[800px] p-4 2xl:p-12">
-        <h4 className="font-medium text-2xl md:text-3xl lg:text-4xl xl:text-[42px] font-theme capitalize -mb-2">
+        <h4 className="font-medium text-2xl md:text-3xl lg:text-4xl xl:text-[42px] font-theme capitalize -mb-2 !leading-[1.25]">
           {title}
         </h4>
-        <p className="text-lg">{category}</p>
-        <p className="opacity-75 !my-8">{desc}</p>
+        <p className="text-lg font-semibold">{category}</p>
+        <p className="opacity-75 !my-8 !leading-relaxed">{desc}</p>
         <b className="uppercase text-lg">Package Start at ${price}</b>
 
         <div className="my-6 bg-theme w-full h-0.5" />
@@ -105,17 +105,19 @@ const Service = ({ item, index }) => {
           ))}
         </ul>
 
-        <p className="text-theme font-medium">Payment plans Available</p>
+        <p className="text-theme font-semibold !mb-6">
+          *Payment plans Available
+        </p>
 
-        <div className="flex flex-col items-start justify-between gap-y-4 mt-12 max-w-[350px]">
+        <div className="flex flex-col items-start justify-between gap-y-4 mt-16 max-w-[350px]">
           <Link
             to={`/contact`}
-            className="rounded-full border border-themeDark bg-themeDark px-16 py-3.5 font-theme sm:text-lg leading-none text-white duration-300 hover:scale-90 hover:bg-theme w-full text-center"
+            className="rounded-full border border-[#577C8E] bg-[#577C8E] px-16 py-3.5 font-theme sm:text-lg leading-none text-white duration-300 hover:scale-90 hover:bg-theme w-full text-center"
           >
             Count Me In!
           </Link>
 
-          <span className="rounded-full border border-themeDark bg-[#3a51663c] px-16 py-3.5 font-theme sm:text-lg leading-none text-white w-full text-center">
+          <span className="rounded-full border-2 border-[#577C8E] bg-[#3a51663c] px-16 py-3.5 font-theme sm:text-lg leading-none text-white w-full text-center">
             Timeline: {timeline}
           </span>
         </div>
@@ -126,7 +128,7 @@ const Service = ({ item, index }) => {
 
 const AllServices = () => {
   return (
-    <div className="py-12 md:py-20">
+    <div className="pt-12 md:pt-20">
       <div className="container">
         <div className="flex flex-col items-center space-y-4 mx-auto">
           <h4 className="uppercase text-2xl md:text-3xl lg:text-4xl font-medium">

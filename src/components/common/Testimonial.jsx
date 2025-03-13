@@ -33,13 +33,6 @@ const testimonials = [
 const Testimonial = () => {
   const [index, setIndex] = useState(1);
 
-  // useEffect(() => {
-  //   const interval = setInterval(() => {
-  //     setIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
-  //   }, 3000);
-  //   return () => clearInterval(interval);
-  // }, []);
-
   return (
     <section className="relative py-12 md:py-20 z-10">
       <img src={abs1} className="absolute top-[25%] left-[10%] -z-[10]" />
@@ -52,7 +45,7 @@ const Testimonial = () => {
         {/* top contents */}
         <div className="flex flex-col items-center justify-center gap-y-6">
           <h5 className="rounded-full border border-themeGray px-4 py-3 text-center leading-none">
-            From Concept to Relity
+            From Concept to Reality
           </h5>
           <h1 className="font-theme text-4xl md:text-5xl font-medium capitalize !leading-[1.175]">
             We design. You grow
@@ -99,7 +92,7 @@ const Testimonial = () => {
           {testimonials.map((testimonial, i) => (
             <p
               key={i}
-              className={`absolute w-full text-lg text-gray-700 transition-all duration-500 transform text-center ${
+              className={`absolute w-full text-lg text-gray-700 transition-all duration-500 transform text-center font-theme ${
                 index === i ? 'opacity-100 scale-100' : 'opacity-0 scale-50'
               }`}
             >

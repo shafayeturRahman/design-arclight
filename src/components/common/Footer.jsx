@@ -1,13 +1,10 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '/images/common/logo.png';
-import {
-  FaFacebookF,
-  FaInstagram,
-  FaLinkedin,
-  FaTwitter,
-} from 'react-icons/fa6';
+import rabbit from '/images/common/footer_abs.png';
+import { FaBehance, FaInstagram, FaLinkedin, FaTwitter } from 'react-icons/fa6';
 import InstaFeed from './InstaFeed';
+import Wave from '../home/Wave';
 
 const navData = [
   {
@@ -38,35 +35,54 @@ const navData = [
 
 const socialData = [
   {
-    link: '#',
-    icon: <FaFacebookF />,
-  },
-  {
-    link: '#',
-    icon: <FaTwitter />,
-  },
-  {
-    link: '#',
+    link: 'https://www.instagram.com/design.arclight/',
     icon: <FaInstagram />,
   },
   {
-    link: '#',
+    link: 'https://www.linkedin.com/in/farzana-uiux/',
     icon: <FaLinkedin />,
+  },
+  {
+    link: 'https://www.behance.net/farzana_uiux',
+    icon: <FaBehance />,
+  },
+  {
+    link: 'https://x.com/Farzana87508488',
+    icon: <FaTwitter />,
   },
 ];
 
 const Footer = () => {
+  useEffect(() => {
+    const handleScrollToTop = () => {
+      window.scrollTo(0, 0);
+    };
+
+    // Add event listener for link clicks
+    const links = document.querySelectorAll('a');
+    links.forEach((link) => {
+      link.addEventListener('click', handleScrollToTop);
+    });
+
+    // Cleanup event listener on component unmount
+    return () => {
+      links.forEach((link) => {
+        link.removeEventListener('click', handleScrollToTop);
+      });
+    };
+  }, []);
+
   return (
     <>
       <InstaFeed />
-      <footer className="bg-theme theme_bg flex justify-center items-center text-white pt-12 md:pt-20 pb-6 md:pb-8">
+      <footer className="bg-theme theme_bg  text-white pt-12 md:pt-20 pb-6 md:pb-8">
         <div className="container">
           <div className="flex flex-wrap justify-between gap-y-12 gap-x-8">
             {/* first */}
             <div>
               <img src={logo} />
               <p className="max-w-[320px] mt-6 opacity-75">
-                We create brands and websites you’ll love, designed to connect
+                We create brands and websites you'll love, designed to connect
                 with your clients and work for you for years to come.
               </p>
             </div>
@@ -94,11 +110,19 @@ const Footer = () => {
               <p className="text-[#F6EFE9]">hello@designarclight.com</p>
             </div>
           </div>
-
+        </div>
+        <Wave />
+        <div className="container relative">
+          <img
+            src={rabbit}
+            className="absolute opacity-20 md:opacity-50 bottom-[3%] left-[5%]"
+          />
           {/* social */}
-          <div className="flex justify-center items-center gap-4 my-12">
+          <div className="flex justify-center items-center gap-4 mb-12">
             {socialData.map((item, i) => (
               <Link
+                target="_blank"
+                rel="noopener noreferrer"
                 to={item.link}
                 key={i}
                 className="text-lg p-2 border rounded-full border-themeMedium hover:scale-110 duration-300 hover:bg-themeMedium"
@@ -109,7 +133,7 @@ const Footer = () => {
           </div>
 
           {/* policy */}
-          <div className="flex justify-center md:justify-end items-center gap-4">
+          <div className="flex justify-center items-center gap-4">
             <p>© 2025 Designarclight, All right reserved</p>
           </div>
         </div>

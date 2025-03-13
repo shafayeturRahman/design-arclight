@@ -30,7 +30,7 @@ const AboutFit = () => {
               {fitData.map((item, i) => (
                 <li
                   key={i}
-                  className="bg-themeLight rounded-xl py-3.5 px-4 font-medium"
+                  className="bg-themeLight rounded-xl py-3.5 px-4 font-bold"
                 >
                   {item}
                 </li>

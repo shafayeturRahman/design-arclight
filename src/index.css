@@ -77,18 +77,21 @@ body {
 
 .theme_bg {
   background-image: url('/images/common/theme_abstract.png');
-  background-repeat: repeat;
+  /* background-repeat: repeat; */
   background-position: center;
+  background-size: cover;
 }
 
 .theme_bg_abstract {
   background-image: url('/images/common/theme_bg_abstract.png');
-  background-repeat: repeat;
+  /* background-repeat: repeat; */
+  background-size: cover;
 }
 
 .theme_bg_light {
   background-image: url('/images/common/theme_light_abstract.png');
-  background-repeat: repeat;
+  /* background-repeat: repeat; */
+  background-size: cover;
 }
 
 .blink_skeliton {

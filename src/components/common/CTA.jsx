@@ -9,8 +9,8 @@ const CTA = () => {
     >
       <div className="container max-w-[650px]">
         <div className="flex flex-col gap-y-6 items-center text-center">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium">
-            See if Design Arclight is right for you. (It totally is.)
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium font-theme">
+            See if Design Arclight is right for you. (It totally is)
           </h2>
           <p className="mb-4 max-w-[550px]">
             Get a guided tour through DesignArclight, and find out how We can

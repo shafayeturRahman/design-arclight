@@ -66,8 +66,10 @@ const PortProjects = () => {
             <ul className="flex gap-8 text-nowrap font-theme text-xl !mt-4 flex-col md:flex-row justify-center items-center">
               <li
                 onClick={() => handleCategorySelect('branding')}
-                className={`cursor-pointer ${
-                  selectedCategory === 'branding' ? 'bg-theme text-white' : ''
+                className={`cursor-pointer  ${
+                  selectedCategory === 'branding'
+                    ? 'bg-theme text-white'
+                    : 'bg-[#D1D8D9]'
                 } py-2 px-6 rounded-full hover:bg-theme hover:text-white duration-300`}
               >
                 Branding
@@ -77,7 +79,7 @@ const PortProjects = () => {
                 className={`cursor-pointer ${
                   selectedCategory === 'custom-website'
                     ? 'bg-theme text-white'
-                    : ''
+                    : 'bg-[#D1D8D9]'
                 } py-2 px-6 rounded-full hover:bg-theme hover:text-white duration-300`}
               >
                 Custom Website
@@ -87,7 +89,7 @@ const PortProjects = () => {
                 className={`cursor-pointer ${
                   selectedCategory === 'website-in-a-day'
                     ? 'bg-theme text-white'
-                    : ''
+                    : 'bg-[#D1D8D9]'
                 } py-2 px-6 rounded-full hover:bg-theme hover:text-white duration-300`}
               >
                 Website In a day
@@ -98,7 +100,14 @@ const PortProjects = () => {
           {/* projects */}
           <div className="grid w-full grid-cols-1 gap-4 md:grid-cols-2 md:gap-8 lg:grid-cols-3">
             {isLoading ? (
-              <ProjectsSkeliton />
+              <>
+                <ProjectsSkeliton />
+                <ProjectsSkeliton />
+                <ProjectsSkeliton />
+                <ProjectsSkeliton />
+                <ProjectsSkeliton />
+                <ProjectsSkeliton />
+              </>
             ) : filteredProjects.length === 0 ? (
               <div className="font-bold text-xl font-theme">
                 Oops! No Projects found to show you!🤕

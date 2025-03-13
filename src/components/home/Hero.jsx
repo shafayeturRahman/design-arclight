@@ -49,7 +49,7 @@ const Hero = () => {
             </Link>
             <Link
               to={`/contact`}
-              className="bg-white hover:bg-themeMedium text-themeMedium hover:text-white px-10 py-4 rounded-full leading-none hover:scale-90 duration-300"
+              className="bg-white hover:bg-themeMedium text-theme hover:text-white px-10 py-4 rounded-full leading-none hover:scale-90 duration-300 font-medium"
             >
               Book a free call
             </Link>

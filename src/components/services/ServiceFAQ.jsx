@@ -92,7 +92,7 @@ const ServiceFAQ = () => {
         <div className="flex flex-col md:flex-row justify-between items-center text-center md:text-start gap-4">
           <div className="space-y-4 flex flex-col items-center md:items-start">
             <h5 className="border border-white text-white rounded-full py-3 px-4 text-center leading-none w-32">
-              FAQ Section
+              FAQ
             </h5>
 
             <h3 className="text-3xl md:text-4xl lg:text-5xl font-medium font-theme max-w-96">

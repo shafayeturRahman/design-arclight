@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import CTA2 from '../components/common/CTA2';
 import WebHero from '../components/webinaday/WebHero';
 import WebPoints from '../components/webinaday/WebPoints';
@@ -7,7 +7,7 @@ import WebServices from '../components/webinaday/WebServices';
 import WebFAQ from '../components/webinaday/WebFAQ';
 import ImageSliding from '../components/home/ImageSliding';
 import AboutMe from '../components/home/AboutMe';
-import Testimonial from '../components/common/Testimonial';
+// import Testimonial from '../components/common/Testimonial';
 
 const WebInADay = () => {
   useEffect(() => {

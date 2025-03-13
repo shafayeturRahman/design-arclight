@@ -1,11 +1,23 @@
 import hero1 from '/images/about/hero1.png';
 import hero2 from '/images/about/hero3.png';
 import hero_main from '/images/about/hero_main.png';
+import heroAbs1 from '/images/about/hero_abs1.png';
+import heroAbs2 from '/images/about/hero_abs2.png';
 
 const AboutHero = () => {
   return (
-    <section className="relative py-12 md:py-20">
-      <div className="container">
+    <section className="relative py-12 md:py-20 z-10">
+      <div className="relative container">
+        <img
+          src={heroAbs1}
+          alt=""
+          className="absolute left-[15%] top-[25%] -z-10"
+        />
+        <img
+          src={heroAbs2}
+          alt=""
+          className="absolute right-[15%] top-[25%] -z-10"
+        />
         <div className="flex flex-col items-center justify-center max-w-[600px] gap-4 mx-auto text-center">
           <h1 className="text-center font-theme text-4xl font-medium capitalize !leading-[1.175] md:text-5xl lg:text-6xl">
             Behind the Brand My Story & Vision

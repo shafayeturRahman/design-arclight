@@ -3,7 +3,7 @@ import rabbit from '/images/home/about-abs1.png';
 
 const WebIncludes = () => {
   return (
-    <section className="relative py-12 md:py-20 font-theme z-10">
+    <section className="relative pt-12 md:pt-20 font-theme z-10">
       <img
         src={rabbit}
         className="absolute top-[25%] right-[10%] -z-[10] opacity-75"
@@ -16,7 +16,7 @@ const WebIncludes = () => {
 
           {/*  */}
           <div className="space-y-4 flex justify-center flex-col">
-            <h4 className="secondary_heading max-w-xl md:mb-6 font-medium">
+            <h4 className="secondary_heading max-w-xl md:mb-6 font-medium md:text-start">
               What's Included in Your “Website in a Day"?
             </h4>
             <ul className="leading-loose list-disc text-lg md:text-xl space-y-4 pl-5">
@@ -31,6 +31,9 @@ const WebIncludes = () => {
               </li>
               <li>Launch-ready website within 24 hours.</li>
             </ul>
+            <p className="text-xl md:text-2xl lg:text-3xl font-medium">
+              Ready to share yours ?
+            </p>
           </div>
         </div>
       </div>

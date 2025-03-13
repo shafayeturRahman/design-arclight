@@ -1,51 +1,39 @@
 import { Link } from 'react-router-dom';
-
-const projectsList = [
-  {
-    image: '/images/home/portfolio1.png',
-    category: 'React',
-    title: 'Beautiful Japan Girl',
-    desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, doloremque.',
-    link: 'https://www.google.com',
-  },
-  {
-    image: '/images/home/portfolio1.png',
-    category: 'React',
-    title: 'Beautiful Japan Girl',
-    desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, doloremque.',
-    link: 'https://www.google.com',
-  },
-  {
-    image: '/images/home/portfolio1.png',
-    category: 'React',
-    title: 'Beautiful Japan Girl',
-    desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, doloremque.',
-    link: 'https://www.google.com',
-  },
-  {
-    image: '/images/home/portfolio1.png',
-    category: 'React',
-    title: 'Beautiful Japan Girl',
-    desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, doloremque.',
-    link: 'https://www.google.com',
-  },
-  {
-    image: '/images/home/portfolio1.png',
-    category: 'React',
-    title: 'Beautiful Japan Girl',
-    desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, doloremque.',
-    link: 'https://www.google.com',
-  },
-  {
-    image: '/images/home/portfolio1.png',
-    category: 'React',
-    title: 'Beautiful Japan Girl',
-    desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, doloremque.',
-    link: 'https://www.google.com',
-  },
-];
+import React, { useState, useEffect } from 'react';
+import { useQuery } from '@tanstack/react-query';
+import ProjectsSkeliton from '../portfolio/ProjectsSkeliton';
 
 const Projects = () => {
+  const [allProjects, setAllProjects] = useState([]);
+
+  // Fetch all projects
+  const {
+    data: projects,
+    isLoading,
+    error,
+  } = useQuery({
+    queryKey: ['projects'],
+    queryFn: async () => {
+      const response = await fetch(
+        `${import.meta.env.VITE_SERVER_URL}/api/projects`
+      );
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      const data = await response.json();
+      return data.data || [];
+    },
+    onSuccess: (data) => {
+      setAllProjects(data);
+    },
+  });
+
+  useEffect(() => {
+    if (projects) {
+      setAllProjects(projects);
+    }
+  }, [projects]);
+
   return (
     <section className="bg-white py-20 md:py-32">
       <div className="container">
@@ -59,52 +47,65 @@ const Projects = () => {
 
           {/* projects */}
           <div className="grid w-full grid-cols-1 gap-4 md:grid-cols-2 md:gap-8 lg:grid-cols-3">
-            {projectsList.map((project, i) => {
-              const { image, category, title, desc, link } = project;
-              return (
-                <Link
-                  to={link}
-                  key={i}
-                  className="group relative flex min-h-[450px] flex-col items-center justify-between overflow-hidden rounded-lg lg:min-h-[500px] xl:min-h-[600px]"
-                >
-                  {/* image */}
-                  <div className="absolute inset-0">
-                    <img
-                      src={image}
-                      alt={title}
-                      className="h-full w-full object-cover"
-                    />
-                  </div>
-                  {/* category */}
-                  <div className="z-10 flex w-full justify-end p-4">
-                    <p className="rounded-full border border-themeGray px-5 py-2.5 text-center text-sm leading-none text-white">
-                      {category}
-                    </p>
-                  </div>
-                  {/* content */}
-                  <div className="m-2 rounded-lg bg-white bg-opacity-20 p-6 text-white backdrop-blur-md">
-                    <div className="flex items-center justify-between gap-4">
-                      <div>
-                        <h4 className="line-clamp-1 text-xl font-semibold group-hover:text-themeDark">
-                          {title}
-                        </h4>
-                        <p className="mt-2 line-clamp-2 text-sm font-light tracking-wide opacity-75">
-                          {desc}
-                        </p>
-                      </div>
+            {isLoading ? (
+              <>
+                <ProjectsSkeliton />
+                <ProjectsSkeliton />
+                <ProjectsSkeliton />
+                <ProjectsSkeliton />
+                <ProjectsSkeliton />
+                <ProjectsSkeliton />
+              </>
+            ) : (
+              projects.slice(0, 6).map((project, i) => {
+                const { showImage, category, title, desc, _id } = project;
+                return (
+                  <Link
+                    to={`/portfolio/${_id}`}
+                    key={i}
+                    className="group relative flex min-h-[450px] flex-col items-center justify-between overflow-hidden rounded-lg lg:min-h-[500px] xl:min-h-[600px]"
+                  >
+                    {/* image */}
+                    <div className="absolute inset-0">
+                      <img
+                        src={`https://res.cloudinary.com/deqpfnzrp/image/upload/v1740149985/${showImage}`}
+                        alt={title}
+                        className="h-full w-full object-cover"
+                      />
+                    </div>
+                    {/* category */}
+                    <div className="z-10 flex w-full justify-end p-4">
+                      <p className="rounded-full border border-themeGray px-5 py-2.5 text-center text-sm leading-none text-white">
+                        {category}
+                      </p>
+                    </div>
+                    {/* content */}
+                    <div className="m-2 rounded-lg bg-white bg-opacity-20 p-6 text-white backdrop-blur-md">
+                      <div className="flex items-center justify-between gap-4">
+                        <div>
+                          <h4 className="line-clamp-1 text-xl font-semibold group-hover:text-themeDark">
+                            {title}
+                          </h4>
+                          <p className="mt-2 line-clamp-2 text-sm font-light tracking-wide opacity-75">
+                            {desc}
+                          </p>
+                        </div>
 
-                      <div className="rounded-full bg-themeDark p-3">
-                        <img
-                          src="/images/common/button_arrow.png"
-                          alt="arrow"
-                          className="w-12"
-                        />
+                        <div>
+                          <div className="rounded-full bg-themeDark min-w-10 h-10 p-2 flex items-center justify-center">
+                            <img
+                              src="/images/common/button_arrow.png"
+                              alt="arrow"
+                              className="w-full h-full"
+                            />
+                          </div>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </Link>
-              );
-            })}
+                  </Link>
+                );
+              })
+            )}
           </div>
 
           <Link

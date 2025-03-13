@@ -16,7 +16,7 @@ const AboutPhilosophy = () => {
 
         <div className="bg-themeMedium rounded-xl overflow-hidden flex flex-col md:flex-row gap-4">
           <div className="flex flex-col justify-between p-4 md:p-10 text-white w-full md:w-[55%]">
-            <h4 className="text-2xl md:text-3xl lg:text-4xl !leading-[1.35]">
+            <h4 className="text-2xl md:text-3xl lg:text-4xl !leading-[1.35] font-theme">
               Crafting Meaningful Experiences Aligned with Your Goals Through
               Purpose, Collaboration, and Precision
             </h4>

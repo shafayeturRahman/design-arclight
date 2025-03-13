@@ -220,7 +220,7 @@ const ContactForm = () => {
               <input
                 type="radio"
                 name="budget"
-                value="$1500 - $2000"
+                value="$1200 - $2000"
                 checked={formData.budget === '$1500 - $2000'}
                 onChange={handleChange}
                 required

@@ -1,9 +1,8 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 
 const AboutMe = () => {
   return (
-    <section className="bg-theme text-white flex flex-col md:flex-row gap-4 items-center">
+    <section className="bg-theme theme_bg text-white flex flex-col md:flex-row gap-4 items-center">
       {/* left side */}
       <div className="relative w-full md:w-1/2 z-10">
         <img src="/images/home/about.png" alt="me" />
@@ -11,12 +10,12 @@ const AboutMe = () => {
         <img
           src="/images/home/about-abs2.png"
           alt="abstract"
-          className="absolute -bottom-12 md:bottom-[20%] right-[80%] md:-right-10 scale-75 md:scale-100"
+          className="absolute -bottom-12 md:bottom-[20%] right-[80%] md:-right-10 md:scale-100"
         />
       </div>
 
       {/* right side */}
-      <div className="p-8 2xl:p-32 relative w-full md:w-1/2 max-w-[900px] z-10">
+      <div className="p-8 2xl:p-32 relative w-full md:w-1/2 max-w-[900px] z-10 ">
         <div className="relative z-10">
           <img
             src="/images/home/about-abs1.png"

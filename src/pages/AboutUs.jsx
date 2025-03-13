@@ -8,6 +8,7 @@ import AboutPsy from '../components/about/AboutPsy';
 import AboutCTA from '../components/about/AboutCTA';
 import AboutPhilosophy from '../components/about/AboutPhilosophy';
 import AboutConnect from '../components/about/AboutConnect';
+import Wave from '../components/home/Wave';
 
 const AboutUs = () => {
   useEffect(() => {
@@ -23,6 +24,7 @@ const AboutUs = () => {
       <AboutFit />
       <AboutMe />
       <AboutShow />
+      <Wave />
       <CTA />
     </>
   );

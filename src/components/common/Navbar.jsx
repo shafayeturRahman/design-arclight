@@ -31,6 +31,16 @@ const Navbar = () => {
 
   return (
     <>
+      <div className="bg-white text-theme font-bold flex justify-center items-center p-2 text-sm font-theme">
+        <p>
+          Now booking for{' '}
+          {new Date(new Date().setMonth(new Date().getMonth())).toLocaleString(
+            'default',
+            { month: 'long' }
+          )}{' '}
+          2025
+        </p>
+      </div>
       {/* desktop navigation */}
       <div className="bg-theme theme_bg py-2 text-white">
         <div className="container">
