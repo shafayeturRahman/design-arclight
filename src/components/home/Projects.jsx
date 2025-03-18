@@ -109,7 +109,7 @@ const Projects = () => {
           </div>
 
           <Link
-            to={`/projects`}
+            to={`/portfolio`}
             className="mt-12 rounded-full bg-themeDark px-10 py-4 leading-none text-white duration-300 hover:scale-90 hover:bg-opacity-90"
           >
             Explore More

@@ -5,6 +5,10 @@ import abs3 from '/images/home/hero_abs3.png';
 import abs4 from '/images/home/hero_abs4.png';
 import SecButton from '../common/SecButton';
 
+const buttonData = {
+  label: 'Explore our work',
+};
+
 const PortHero = () => {
   return (
     <section className="bg-theme theme_bg min-h-[100vh] md:min-h-[80vh] flex justify-center items-center text-white relative z-10">
@@ -38,7 +42,7 @@ const PortHero = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 items-center mt-6">
-            <SecButton />
+            <SecButton data={buttonData} />
           </div>
         </div>
       </div>

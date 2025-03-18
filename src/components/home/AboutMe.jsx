@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 const AboutMe = () => {
   return (
-    <section className="bg-theme theme_bg text-white flex flex-col md:flex-row gap-4 items-center">
+    <section className="bg-theme text-white flex flex-col md:flex-row gap-4 items-center">
       {/* left side */}
       <div className="relative w-full md:w-1/2 z-10">
         <img src="/images/home/about.png" alt="me" />

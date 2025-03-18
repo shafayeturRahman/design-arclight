@@ -45,11 +45,6 @@ const ContactForm = () => {
     mutation.mutate(formData);
   };
 
-  useEffect(() => {
-    console.log('Mutation Status:', mutation.status);
-    console.log(mutation.isLoading);
-  }, [mutation.status, mutation.isLoading]);
-
   return (
     <div className="max-w-4xl mx-auto p-4 md:p-10 xl:p-12 bg-[#ECECEA] my-12 rounded-xl">
       <form onSubmit={handleSubmit} className="space-y-6">
@@ -221,11 +216,11 @@ const ContactForm = () => {
                 type="radio"
                 name="budget"
                 value="$1200 - $2000"
-                checked={formData.budget === '$1500 - $2000'}
+                checked={formData.budget === '$1200 - $2000'}
                 onChange={handleChange}
                 required
               />{' '}
-              $1500 - $2000
+              $1200 - $2000
             </label>
             <label>
               <input
@@ -242,12 +237,12 @@ const ContactForm = () => {
               <input
                 type="radio"
                 name="budget"
-                value="Whatever it takes!"
-                checked={formData.budget === 'Whatever it takes!'}
+                value="3700"
+                checked={formData.budget === '3700'}
                 onChange={handleChange}
                 required
               />{' '}
-              Whatever it takes!
+              {`>3600`}
             </label>
           </div>
         </div>
