@@ -134,7 +134,9 @@ const Footer = () => {
 
           {/* policy */}
           <div className="flex justify-center items-center gap-4">
-            <p>© 2025 Designarclight, All right reserved</p>
+            <p>
+              © {new Date().getFullYear()} Designarclight, All right reserved
+            </p>
           </div>
         </div>
       </footer>

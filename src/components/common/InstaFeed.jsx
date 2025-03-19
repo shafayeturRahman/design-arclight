@@ -47,7 +47,7 @@ const InstaFeed = () => {
         <div className="text-lg p-2 border bg-themeLight rounded-full border-themeMedium">
           <FaInstagram />
         </div>
-        <span>designarclight</span>
+        <span>design.arclight</span>
       </Link>
       <Marquee speed={30}>
         {instaData.map((item, i) => (
