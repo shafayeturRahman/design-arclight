@@ -100,7 +100,7 @@ const Pricing = () => {
                       Count Me In!
                     </Link>
 
-                    <span className="rounded-full border border-[#c7d9e56b] bg-[#3a516680] px-16 py-3.5 font-theme sm:text-lg leading-none text-white">
+                    <span className="whitespace-nowrap rounded-full border border-[#c7d9e56b] bg-[#3a516680] px-12 md:px-16 py-3.5 font-theme sm:text-lg leading-none text-white">
                       Timeline- 2 Weeks
                     </span>
                   </div>

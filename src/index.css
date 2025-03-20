@@ -90,8 +90,8 @@ body {
 
 .theme_bg_light {
   background-image: url('/images/common/theme_light_abstract.png');
-  /* background-repeat: repeat; */
-  background-size: cover;
+  background-repeat: repeat;
+  /* background-size: cover; */
 }
 
 .blink_skeliton {

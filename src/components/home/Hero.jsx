@@ -6,18 +6,18 @@ import abs4 from '/images/home/hero_abs4.png';
 
 const Hero = () => {
   return (
-    <section className="bg-theme theme_bg min-h-[100vh] md:min-h-[80vh] flex justify-center items-center text-white relative z-10">
+    <section className="bg-theme theme_bg py-28 md:min-h-[80vh] flex justify-center items-center text-white relative z-10">
       <img
         src={abs1}
-        className="absolute top-[20%] left-[5%] -z-[10] opacity-50"
+        className="hidden md:block absolute top-[20%] left-[5%] -z-[10] opacity-50"
       />
       <img
         src={abs2}
-        className="absolute bottom-[35%] left-[20%] -z-[10] opacity-50"
+        className="hidden md:block absolute bottom-[35%] left-[20%] -z-[10] opacity-50"
       />
       <img
         src={abs3}
-        className="absolute bottom-[20%] right-[15%] max-w-[150px] h-auto -z-[10] opacity-50"
+        className="hidden md:block absolute bottom-[20%] right-[15%] max-w-[150px] h-auto -z-[10] opacity-50"
       />
       <img
         src={abs4}
@@ -29,13 +29,13 @@ const Hero = () => {
           <h5 className="border border-themeGray rounded-full py-3 px-4 text-center leading-none">
             Branding and Website Design
           </h5>
-          <h1 className="text-4xl md:text-6xl lg:text-[80px] text-center capitalize font-theme font-medium">
+          <h1 className="text-[26px] md:text-6xl lg:text-[80px] text-center capitalize font-theme font-medium">
             Transforming brands with{' '}
             <span className="font-light">minimalistic</span> &{' '}
             <span className="font-light">intentional</span> design that
             resonates.
           </h1>
-          <p className="max-w-[600px] opacity-75 text-lg text-center">
+          <p className="max-w-[600px] opacity-75 text-[17px] md:text-lg text-center">
             We create brands and websites you’ll love, designed to connect with
             your clients and work for you for years to come.
           </p>
@@ -49,7 +49,7 @@ const Hero = () => {
             </Link>
             <Link
               to={`/contact`}
-              className="bg-white hover:bg-themeMedium text-theme hover:text-white px-10 py-4 rounded-full leading-none hover:scale-90 duration-300 font-medium"
+              className="bg-white hover:bg-themeMedium text-theme hover:text-white px-10 py-4 rounded-full leading-none hover:scale-90 duration-300 font-medium capitalize"
             >
               Book a free call
             </Link>

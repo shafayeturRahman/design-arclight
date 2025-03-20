@@ -2,7 +2,7 @@ import React from 'react';
 
 const Wave = () => {
   return (
-    <div className="relative w-full overflow-hidden">
+    <div className="hidden md:block relative w-full overflow-hidden">
       <svg
         viewBox="0 0 2370 270"
         style={{ width: '100vw', height: 'auto' }}

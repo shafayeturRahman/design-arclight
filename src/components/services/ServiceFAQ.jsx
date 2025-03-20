@@ -115,12 +115,12 @@ const ServiceFAQ = () => {
 
         {/* faqs */}
         <div className="grid grid-cols-2 gap-0 md:gap-6">
-          <div className="md:col-span-1">
+          <div className="col-span-2 md:col-span-1">
             {faqData.slice(0, 5).map((faq, i) => (
               <FaqItem faq={faq} key={i} />
             ))}
           </div>
-          <div className="md:col-span-1">
+          <div className="col-span-2 md:col-span-1">
             {faqData.slice(5, 9).map((faq, i) => (
               <FaqItem faq={faq} key={i} />
             ))}

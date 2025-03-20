@@ -13,7 +13,7 @@ const AboutConnect = () => {
             </h5>
           </div>
 
-          <h1 className="text-4xl md:text-5xl font-theme font-medium !leading-tight">
+          <h1 className="text-[28px] md:text-5xl font-theme font-medium !leading-tight">
             Yes, it's possible—and it can be your reality.
             <br />
             Imagine a website and brand that not only grabs attention but also
@@ -45,7 +45,7 @@ const AboutConnect = () => {
             </div>
           </div>
 
-          <div className="w-full lg:w-2/5">
+          <div className="w-full lg:w-2/5 mt-6">
             <img src={connect2} alt="" className="w-full h-auto object-cover" />
           </div>
         </div>

@@ -36,7 +36,7 @@ const AboutPhilosophy = () => {
                 to={`/contact`}
                 className="flex items-center hover:scale-90 origin-left duration-300 "
               >
-                <span className="bg-themeDark px-12 py-3 rounded-full whitespace-nowrap text-sm sm:text-base">
+                <span className="bg-themeDark px-4 md:px-12 py-3 rounded-full whitespace-nowrap text-sm sm:text-base">
                   Let's Create Together
                 </span>
                 <span className="bg-themeDark p-3 rounded-full">

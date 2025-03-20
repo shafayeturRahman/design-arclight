@@ -11,7 +11,7 @@ const buttonData = {
 
 const PortHero = () => {
   return (
-    <section className="bg-theme theme_bg min-h-[100vh] md:min-h-[80vh] flex justify-center items-center text-white relative z-10">
+    <section className="bg-theme theme_bg py-28 md:min-h-[80vh] flex justify-center items-center text-white relative z-10">
       <img
         src={abs1}
         className="absolute top-[20%] left-[5%] -z-[10] opacity-50"

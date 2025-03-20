@@ -124,7 +124,7 @@ const Navbar = () => {
               </div>
             </div>
 
-            <div className="flex flex-col gap-12 sm:items-end mt-32 md:mt-0 text-themeGray text-opacity-50">
+            <div className="flex flex-col gap-12 sm:items-end mt-20 md:mt-0 text-themeGray text-opacity-50">
               {navData.map((link, i) => (
                 <Link
                   to={link.link}
@@ -139,6 +139,17 @@ const Navbar = () => {
                   </h5>
                 </Link>
               ))}
+              <Link
+                to={`/contact`}
+                className={`${
+                  pathname === '/contact' && 'text-white'
+                } hover:text-white duration-300`}
+                onClick={() => setNavActive(false)}
+              >
+                <h5 className="uppercase text-3xl sm:text-5xl md:text-7xl">
+                  Contact Us
+                </h5>
+              </Link>
             </div>
           </div>
         </div>

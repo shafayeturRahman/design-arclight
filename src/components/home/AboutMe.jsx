@@ -20,7 +20,7 @@ const AboutMe = () => {
           <img
             src="/images/home/about-abs1.png"
             alt="abstract"
-            className="absolute right-0 -top-10 md:-top-5 z-[-10] scale-75 md:scale-100"
+            className="opacity-30 md:opacity-100 absolute right-0 -top-10 md:-top-5 z-[-10] scale-75 md:scale-100"
           />
           <div className="z-10">
             <h2 className="text-3xl md:text-4xl lg:text-5xl !leading-snug font-medium font-theme uppercase">

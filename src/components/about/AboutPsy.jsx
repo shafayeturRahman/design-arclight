@@ -3,12 +3,12 @@ import rabbit from '/images/common/rabbit.png';
 
 const AboutPsy = () => {
   return (
-    <section className="flex flex-col lg:flex-row gap-4 items-center">
+    <section className="flex flex-col-reverse lg:flex-row gap-4 items-center">
       {/* left side */}
       <div className="relative w-full lg:w-1/2">
         <img src={image} alt="image" />
       </div>
-      <div className="p-8 2xl:p-20 2xl:pr-36 relative w-full lg:w-1/2 max-w-[950px]">
+      <div className="p-4 2xl:p-20 2xl:pr-36 relative w-full lg:w-1/2 max-w-[950px]">
         {/*  */}
         <div className="space-y-4 relative z-10">
           <img

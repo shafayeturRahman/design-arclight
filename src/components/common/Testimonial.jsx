@@ -8,25 +8,27 @@ import arrow1 from '/images/common/test_icon_arrow1.png';
 import arrow2 from '/images/common/test_icon_arrow2.png';
 
 import reviewer1 from '/images/common/reviewer1.png';
+import reviewer2 from '/images/common/reviewer3.png';
+import reviewer3 from '/images/common/reviewer2.png';
 
 const testimonials = [
   {
-    text: 'Working with Redwood Rise has been an incredible experience. She’s incredibly insightful, supportive, and easy to connect with. In just a few sessions, the strategies she’s introduced have transformed how I approach my daily life, empowering me to take control and creating a newfound sense of calm and clarity.',
-    author: 'SHAFAYETUR',
-    designation: 'Leadership Coach',
+    text: 'The website design exceeded my expectations! It beautifully represents my brand and has significantly improved client engagement. I’ve noticed an increase in inquiries, and my portfolio has never looked better!',
+    author: 'Emily Carter',
+    designation: 'Founder, Carter Photography',
     img: reviewer1,
   },
   {
-    text: 'The website she designed not only looks incredible but also speaks directly to my ideal clients, making it easier for me to showcase my work and attract the right audience. I’ve received countless compliments on my new branding, and I finally feel confident in how my business is presented online.',
-    author: 'INSIGHTFUL, FUN',
-    designation: 'Leadership Coach',
-    img: reviewer1,
+    text: '"Working with her was an absolute pleasure. She understood my vision and created a website that not only looks stunning but also enhances user experience. Our online presence has grown remarkably since the launch!',
+    author: 'Michael Thompson',
+    designation: 'CEO, Thompson Consulting',
+    img: reviewer2,
   },
   {
     text: 'I felt truly heard and understood. The coaching sessions helped me build confidence and find a clear path forward in my journey.',
-    author: 'FARZANA RAHMAN',
+    author: 'Sophia Reynolds',
     designation: 'Leadership Coach',
-    img: reviewer1,
+    img: reviewer3,
   },
 ];
 
@@ -47,14 +49,14 @@ const Testimonial = () => {
           <h5 className="rounded-full border border-themeGray px-4 py-3 text-center leading-none">
             From Concept to Reality
           </h5>
-          <h1 className="font-theme text-4xl md:text-5xl font-medium capitalize !leading-[1.175]">
+          <h1 className="text-center font-theme text-4xl md:text-5xl font-medium capitalize !leading-[1.175]">
             We design. You grow
           </h1>
           <p className="opacity-65">Our process is as simple as possible.</p>
         </div>
 
         {/*  */}
-        <div className="flex md:items-start flex-col md:flex-row text-center gap-y-12 md:gap-4 mt-12 max-w-[1000px] mx-auto">
+        <div className="flex md:items-start flex-col md:flex-row text-center gap-y-12 md:gap-4 max-w-[1000px] mx-auto">
           <div className="flex flex-col justify-center items-center gap-4">
             <img src={icon1} />
             <h4 className="font-theme text-2xl font-bold -mb-4">Discovery</h4>
@@ -84,7 +86,7 @@ const Testimonial = () => {
       </div>
 
       {/* testimonial */}
-      <div className="container flex flex-col justify-center items-center mt-36">
+      <div className="container flex flex-col justify-center items-center mt-24">
         <h3 className="text-sm uppercase font-theme font-medium mb-6">
           Past Client Results
         </h3>

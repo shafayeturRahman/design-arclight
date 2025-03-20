@@ -75,8 +75,8 @@ const Projects = () => {
                     </div>
                     {/* category */}
                     <div className="z-10 flex w-full justify-end p-4">
-                      <p className="rounded-full border border-themeGray px-5 py-2.5 text-center text-sm leading-none text-white">
-                        {category}
+                      <p className="rounded-full border border-themeGray px-5 py-2.5 text-center text-sm leading-none text-white capitalize">
+                        {category.replace(/-/g, ' ')}
                       </p>
                     </div>
                     {/* content */}

@@ -31,7 +31,7 @@ const Bloom = () => {
         <img
           src="/images/home/bloom-abs.png"
           alt="signature"
-          className="absolute -bottom-20 right-0 xl:right-36 -z-10"
+          className="hidden md:block absolute -bottom-20 right-0 xl:right-36 -z-10"
         />
       </div>
     </section>

@@ -57,45 +57,43 @@ const PortProjects = () => {
           <h5 className="rounded-full border border-themeGray px-4 py-3 text-center leading-none">
             A Glimpse of My Work
           </h5>
-          <h1 className="max-w-[600px] text-center font-theme text-4xl font-medium capitalize !leading-[1.175] md:text-5xl">
+          <h1 className="max-w-[600px] text-center font-theme text-[28px] font-medium capitalize !leading-[1.175] md:text-5xl">
             Where Every Frame Speaks Every Detail Inspires
           </h1>
 
           {/* filters */}
-          <div className="mb-20">
-            <ul className="flex gap-8 text-nowrap font-theme text-xl !mt-4 flex-col md:flex-row justify-center items-center">
-              <li
-                onClick={() => handleCategorySelect('branding')}
-                className={`cursor-pointer  ${
-                  selectedCategory === 'branding'
-                    ? 'bg-theme text-white'
-                    : 'bg-[#D1D8D9]'
-                } py-2 px-6 rounded-full hover:bg-theme hover:text-white duration-300`}
-              >
-                Branding
-              </li>
-              <li
-                onClick={() => handleCategorySelect('custom-website')}
-                className={`cursor-pointer ${
-                  selectedCategory === 'custom-website'
-                    ? 'bg-theme text-white'
-                    : 'bg-[#D1D8D9]'
-                } py-2 px-6 rounded-full hover:bg-theme hover:text-white duration-300`}
-              >
-                Custom Website
-              </li>
-              <li
-                onClick={() => handleCategorySelect('website-in-a-day')}
-                className={`cursor-pointer ${
-                  selectedCategory === 'website-in-a-day'
-                    ? 'bg-theme text-white'
-                    : 'bg-[#D1D8D9]'
-                } py-2 px-6 rounded-full hover:bg-theme hover:text-white duration-300`}
-              >
-                Website In a day
-              </li>
-            </ul>
-          </div>
+          <ul className="flex gap-4 md:gap-8 text-nowrap font-theme text-xl !mt-4 flex-row flex-wrap justify-center items-center w-full mb-20">
+            <li
+              onClick={() => handleCategorySelect('branding')}
+              className={`cursor-pointer  ${
+                selectedCategory === 'branding'
+                  ? 'bg-theme text-white'
+                  : 'bg-[#D1D8D9]'
+              } py-2 px-6 rounded-full hover:bg-theme hover:text-white duration-300`}
+            >
+              Branding
+            </li>
+            <li
+              onClick={() => handleCategorySelect('custom-website')}
+              className={`cursor-pointer ${
+                selectedCategory === 'custom-website'
+                  ? 'bg-theme text-white'
+                  : 'bg-[#D1D8D9]'
+              } py-2 px-6 rounded-full hover:bg-theme hover:text-white duration-300`}
+            >
+              Custom Website
+            </li>
+            <li
+              onClick={() => handleCategorySelect('website-in-a-day')}
+              className={`cursor-pointer ${
+                selectedCategory === 'website-in-a-day'
+                  ? 'bg-theme text-white'
+                  : 'bg-[#D1D8D9]'
+              } py-2 px-6 rounded-full hover:bg-theme hover:text-white duration-300`}
+            >
+              Website In a day
+            </li>
+          </ul>
 
           {/* projects */}
           <div className="grid w-full grid-cols-1 gap-4 md:grid-cols-2 md:gap-8 lg:grid-cols-3">
@@ -131,8 +129,8 @@ const PortProjects = () => {
                     </div>
                     {/* category */}
                     <div className="z-10 flex w-full justify-end p-4">
-                      <p className="rounded-full border border-themeGray px-5 py-2.5 text-center text-sm leading-none text-white">
-                        {category}
+                      <p className="rounded-full border border-themeGray px-5 py-2.5 text-center text-sm leading-none text-white capitalize">
+                        {category.replace(/-/g, ' ')}
                       </p>
                     </div>
                     {/* content */}

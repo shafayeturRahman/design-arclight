@@ -6,7 +6,7 @@ import abs4 from '/images/home/hero_abs4.png';
 
 const HeroOne = () => {
   return (
-    <section className="bg-theme theme_bg min-h-screen md:min-h-[80vh] flex justify-center items-center text-white relative z-10">
+    <section className="bg-theme theme_bg py-20 md:min-h-[80vh] flex justify-center items-center text-white relative z-10">
       <img
         src={abs1}
         className="absolute top-[20%] left-[5%] -z-[10] opacity-50"

@@ -77,7 +77,7 @@ const AboutShow = () => {
                 Dreamy
               </h4>
             </div>
-            <div className="relative flex flex-col justify-center items-center text-center overflow-hidden rounded-xl min-h-[400px] lg:min-h-[600px] xl:min-h-[800px] w-full sm:w-[45%]">
+            <div className="relative flex flex-col justify-center items-center text-center overflow-hidden rounded-xl min-h-[300px] lg:min-h-[600px] xl:min-h-[800px] w-full sm:w-[45%] py-6">
               <h4 className="uppercase font-theme text-theme text-3xl lg:text-5xl lg:leading-snug font-medium mb-6">
                 all combined, separate, or somewhere in between My design style
                 is...
