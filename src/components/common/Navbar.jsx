@@ -100,7 +100,7 @@ const Navbar = () => {
       {/* mobile navigation */}
       <div className="block lg:hidden">
         <div
-          className={`fixed py-12 inset-0 w-screen h-screen bg-theme z-[9999999999] duration-500 ${
+          className={`fixed py-12 inset-0 w-screen h-screen theme_bg bg-theme z-[9999999999] duration-500 ${
             navActive ? 'nav-active' : 'nav-not-active'
           }`}
         >

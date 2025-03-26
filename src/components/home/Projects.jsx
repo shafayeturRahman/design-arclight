@@ -57,6 +57,8 @@ const Projects = () => {
                 <ProjectsSkeliton />
               </>
             ) : (
+              projects &&
+              Array.isArray(projects) &&
               projects.slice(0, 6).map((project, i) => {
                 const { showImage, category, title, desc, _id } = project;
                 return (
