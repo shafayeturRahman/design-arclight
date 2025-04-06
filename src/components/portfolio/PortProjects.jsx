@@ -1,55 +1,22 @@
 import { Link } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
-import { useQuery } from '@tanstack/react-query';
-import { toast } from 'react-toastify';
-import ProjectsSkeliton from './ProjectsSkeliton';
+import { portfolioData } from '../../data/staticPortfolioData';
 
 const PortProjects = () => {
-  const [allProjects, setAllProjects] = useState([]);
+  const [allProjects, setAllProjects] = useState(portfolioData);
   const [selectedCategory, setSelectedCategory] = useState('branding');
 
-  // Fetch all projects
-  const {
-    data: projects,
-    isLoading,
-    error,
-  } = useQuery({
-    queryKey: ['projects'],
-    queryFn: async () => {
-      const response = await fetch(
-        `${import.meta.env.VITE_SERVER_URL}/api/projects`
-      );
-      if (!response.ok) {
-        throw new Error('Network response was not ok');
-      }
-      const data = await response.json();
-      return data.data || [];
-    },
-    onSuccess: (data) => {
-      setAllProjects(data);
-    },
-  });
-
-  useEffect(() => {
-    if (projects) {
-      setAllProjects(projects);
-    }
-  }, [projects]);
-
-  // Function to handle category selection
   const handleCategorySelect = (category) => {
     setSelectedCategory(category);
+    console.log(category);
   };
 
-  // Filtered projects based on selected category
   const filteredProjects = selectedCategory
-    ? allProjects.filter((project) => project.category === selectedCategory)
+    ? allProjects.filter((project) =>
+        project.categories.includes(selectedCategory)
+      )
     : allProjects;
 
-  if (error) {
-    toast.error(error.message);
-    return <div>Error: {error.message}</div>;
-  }
   return (
     <section className="bg-white py-20 md:py-32">
       <div className="container">
@@ -97,41 +64,37 @@ const PortProjects = () => {
 
           {/* projects */}
           <div className="grid w-full grid-cols-1 gap-4 md:grid-cols-2 md:gap-8 lg:grid-cols-3">
-            {isLoading ? (
-              <>
-                <ProjectsSkeliton />
-                <ProjectsSkeliton />
-                <ProjectsSkeliton />
-                <ProjectsSkeliton />
-                <ProjectsSkeliton />
-                <ProjectsSkeliton />
-              </>
-            ) : filteredProjects.length === 0 ? (
+            {filteredProjects.length === 0 ? (
               <div className="font-bold text-xl font-theme">
                 Oops! No Projects found to show you!🤕
               </div>
             ) : (
               filteredProjects.slice(0, 6).map((project, i) => {
-                const { showImage, category, title, desc, _id } = project;
+                const { showImage, categories, title, desc, id } = project;
                 return (
                   <Link
-                    to={`/portfolio/${_id}`}
+                    to={`/portfolio/${id}`}
                     key={i}
                     className="group relative flex min-h-[450px] flex-col items-center justify-between overflow-hidden rounded-lg lg:min-h-[500px] xl:min-h-[600px]"
                   >
                     {/* image */}
                     <div className="absolute inset-0">
                       <img
-                        src={`https://res.cloudinary.com/deqpfnzrp/image/upload/v1740149985/${showImage}`}
+                        src={showImage}
                         alt={title}
                         className="h-full w-full object-cover"
                       />
                     </div>
                     {/* category */}
                     <div className="z-10 flex w-full justify-end p-4">
-                      <p className="rounded-full border border-themeGray px-5 py-2.5 text-center text-sm leading-none text-white capitalize">
-                        {category.replace(/-/g, ' ')}
-                      </p>
+                      {categories.map((cat, j) => (
+                        <p
+                          className="rounded-full border border-themeGray px-5 py-2.5 text-center text-sm leading-none text-white capitalize"
+                          key={j}
+                        >
+                          {cat.replace(/-/g, ' ')}
+                        </p>
+                      ))}
                     </div>
                     {/* content */}
                     <div className="m-2 rounded-lg bg-white bg-opacity-20 p-6 text-white backdrop-blur-md">

@@ -99,7 +99,7 @@ export const portfolioData = [
     platform: `Wordpress`,
     vibe: `Elegant, Craftsmanship, Timeless , Aesthetics,  Harmonious `,
     desc: `A website & brand design for a interior design studio dedicated to curating timeless spaces that embody elegance, craftsmanship, and modern sensibility. With a refined approach that balances heritage and innovation, Atelier Forma transforms interiors into immersive, harmonious experiences.Atelier Forma required a brand identity that seamlessly reflects its philosophy—merging architectural tradition with contemporary refinement. The goal was to create a cohesive visual language that conveys its dedication to curated aesthetics, material integrity, and thoughtful spatial design. `,
-    categories: [`Website in a day`],
+    categories: [`website-in-a-day`],
     showImage: p1show,
     mainImage: p1main,
     bannerImage: p1banner,
@@ -124,7 +124,7 @@ export const portfolioData = [
 The logo features a refined serif font with delicate strokes, embodying elegance and clarity. Supporting branding elements, including a versatile submark, ensure consistency across all touchpoints.
 
 This minimalist and cohesive identity captures SERENE and SPACE’s ethos—where elegance meets functionality, and every space tells a story.`,
-    categories: [`Branding`],
+    categories: [`branding`],
     showImage: p2show,
     mainImage: p2main,
     bannerImage: p2banner,
@@ -147,7 +147,7 @@ This minimalist and cohesive identity captures SERENE and SPACE’s ethos—wher
     vibe: `Elegant, Classic, romantic, elevated,  timeless`,
     desc: `Capture Emotion: A logo suite that radiates elegance and evokes joy at first glance.Unified Visuals: Seamless design elements that align with your services, from floral arrangements to flawless ceremonies.
 Timeless Identity: A brand that feels luxurious yet approachable, leaving a lasting impression on your clients.`,
-    categories: [`Branding`],
+    categories: [`branding`],
     showImage: p3show,
     mainImage: p3main,
     bannerImage: p3banner,
@@ -171,7 +171,7 @@ Timeless Identity: A brand that feels luxurious yet approachable, leaving a last
     desc: `Life Among Nature – A seamless blend of modern architecture and natural serenity.
 
 The goal was to create a visually immersive experience that highlights the beauty of sustainable, nature-inspired living. Key features:  Minimalistic layout for an elegant user journey. Bold visuals to emphasise architectural brilliance. Warm tones and textures that reflect harmony with nature.`,
-    categories: [`Custom Website`],
+    categories: [`custom-website`],
     showImage: p4show,
     mainImage: p4main,
     bannerImage: p4banner,
@@ -195,7 +195,7 @@ The goal was to create a visually immersive experience that highlights the beaut
     desc: `A website  for a lamp-light  online store. A passion project here at Design Arclight aimed at creating a timeless, sophisticated online presence for a lamp store.
 
 Let’s Create the perfect glow for your home. Your home Is an extension of your soul & the light in it should reflect who you are.`,
-    categories: [`Custom Website`],
+    categories: [`custom-website`],
     showImage: p5show,
     mainImage: p5main,
     bannerImage: p5banner,
@@ -219,7 +219,7 @@ Let’s Create the perfect glow for your home. Your home Is an extension of your
     desc: `Rooted in Strength, Rising in Impact. For Redwood Rise, I wanted to create a brand identity that reflects resilience, transformation, and deep-rooted leadership.
 
 Inspired by towering redwoods—symbols of endurance and strength—this brand embodies the belief that great leadership is built over time, weathering challenges and growing stronger with each experience.`,
-    categories: [`Branding`],
+    categories: [`branding`],
     showImage: p6show,
     mainImage: p6main,
     bannerImage: p6banner,

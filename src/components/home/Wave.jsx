@@ -12,9 +12,9 @@ const Wave = () => {
         <path
           d="M-110 224C-110 224 323.232 86.0886 622.897 75.4828C961.553 63.497 1170.36 166.366 1509.21 169.747C1854.85 173.196 2358 47 2358 47"
           stroke="#C7D9E5"
-          stroke-opacity="1"
-          stroke-width="80"
-          stroke-linecap="round"
+          strokeOpacity="1"
+          strokeWidth="80"
+          strokeLinecap="round"
           fill="none"
         />
 
