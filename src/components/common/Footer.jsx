@@ -43,7 +43,7 @@ const socialData = [
     icon: <FaLinkedin />,
   },
   {
-    link: 'https://www.behance.net/farzana_uiux',
+    link: 'https://www.behance.net/designarclight',
     icon: <FaBehance />,
   },
   {
